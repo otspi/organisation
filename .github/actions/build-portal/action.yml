@@ -1,0 +1,55 @@
+name: Construction et contrôle du portail
+description: >-
+  Étapes communes au déploiement et à la vérification des pull requests : construction stricte du
+  site, contrôle d'accessibilité des pages, export des PDF et validation PDF/UA-1. Le site construit
+  reste dans ./site pour les étapes suivantes du workflow appelant.
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+        cache: pip
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt -r requirements-pdf.txt
+        sudo apt-get update
+        sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0 poppler-utils
+
+    - name: Build documentation
+      shell: bash
+      run: mkdocs build --strict
+
+    # Accessibilité des pages HTML (WCAG 2 AA, moteur axe) : Chrome du runner, sans téléchargement
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: "22"
+
+    - name: Check accessibility (pa11y, axe)
+      shell: bash
+      env:
+        PUPPETEER_SKIP_DOWNLOAD: "true"
+        CHROME: /usr/bin/google-chrome
+      run: |
+        npm install --no-save --no-audit --no-fund pa11y@9
+        node scripts/check_a11y.js site
+
+    - name: Export PDF
+      shell: bash
+      run: python scripts/export_pdf.py
+
+    - name: Cache veraPDF
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/verapdf
+        key: verapdf-1.30.2
+
+    - name: Validate PDF/UA-1
+      shell: bash
+      run: bash scripts/check_pdf_ua.sh

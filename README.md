@@ -42,35 +42,72 @@ La gouvernance d'OTSPI applique une séparation stricte des devoirs conformémen
 ## 📁 Panoplie Documentaire Complète
 
 ```
-├── docs/
-│   ├── index.md                     # Page d'accueil du portail web about.otspi.org
-│   ├── CNAME                        # Configuration du domaine personnalisé (about.otspi.org)
+├── docs/                              # Contenu du portail about.otspi.org
+│   ├── index.md                       # Page d'accueil (bandeau dans overrides/home.html)
+│   ├── livre-blanc/                   # Livre blanc (FR, fait foi) et historique des versions
+│   ├── white-paper/                   # Traduction anglaise du livre blanc
 │   ├── statuts/
-│   │   └── statuts-association.md   # Statuts constitutifs adoptés (OTSPI, Lyon, 20 septembre 2026)
+│   │   └── statuts-association.md     # Projet de statuts, soumis à l'AG constitutive (non encore adopté)
 │   ├── reglement-interieur/
-│   │   └── reglement-interieur.md   # RI complet : cursus Officiers, MFA FIPS/ANSSI, Key Custodians, dépenses
-│   ├── administratif/
-│   │   ├── pv-ag-constitutive-modele.md # PV d'AG Constitutive (élections, mandats fiscaux L.80 CB, RC Pro)
-│   │   ├── rescrit-fiscal-mecenat.md    # Demande formelle de rescrit fiscal DGFIP (Méthode 4P)
-│   │   └── declaration-prefecture.md    # Guide des formalités préfecture (RNA, JOAFE, SIRET)
-│   ├── cadrage/
-│   │   ├── index.md                 # Présentation du socle d'audit initial TSP / PKI
-│   │   ├── cp-cps-cadre.md          # Cadre général CP/CPS conforme RFC 3647 & ETSI EN 319 411
-│   │   ├── pssi.md                  # PSSI (ISO 27001 & ETSI EN 319 401, RSSI, incidents)
-│   │   └── termination-plan.md      # Plan de fin d'activité (archivage 10-30 ans, séquestre financier)
+│   │   └── reglement-interieur.md     # RI : cursus Officiers, MFA FIPS/ANSSI, Key Custodians, dépenses
 │   ├── gouvernance/
-│   ├── charte-ethique.md            # Charte d'éthique, de déontologie et de gestion désintéressée
-│   │   └── comite-technique.md      # Articulation CPC (PMA), TSC (ingénierie logicielle) & RFCs
+│   │   ├── charte-ethique.md          # Charte d'éthique, de déontologie et de transparence publique
+│   │   └── comite-technique.md        # Articulation CPC (PMA), TSC (ingénierie logicielle) et RFC
+│   ├── administratif/                 # PV d'AG constitutive (modèle), rescrit fiscal, guide préfecture…
+│   ├── cadrage/                       # Socle d'audit TSP / PKI : CP/CPS, PSSI, fin d'activité, OID, devis
 │   ├── adhesion/
-│   │   └── bulletin-adhesion.md     # Formulaires d'adhésion (sympathisants, titulaires, bienfaiteurs)
-│   └── reunions/
-│       └── index.md                 # Registre public des réunions et procès-verbaux (caviardage RGPD)
-├── mkdocs.yml                       # Configuration Material for MkDocs (about.otspi.org)
-├── .github/workflows/
-│   └── deploy-o2switch.yml          # Déploiement automatique chez o2switch (FTPS)
-├── LICENSE                          # Licence Creative Commons Attribution 4.0 International
-└── README.md                        # Documentation générale du dépôt
+│   │   └── bulletin-adhesion.md       # Formulaires d'adhésion (sympathisants, titulaires, bienfaiteurs)
+│   ├── reunions/                      # Registre des réunions, transparence des hébergements (FR / EN)
+│   ├── assets/                        # Logos, police Inter (OFL), image de partage
+│   ├── stylesheets/                   # Charte du portail (extra.css), impression et PDF (print.css)
+│   └── javascripts/                   # Accessibilité, mesure d'audience sans cookie
+├── overrides/                         # Gabarits Material : accueil, 404, métadonnées de partage
+├── hooks/page_lang.py                 # Langue de la balise <html> selon la page
+├── scripts/                           # Outils : voir ci-dessous
+├── data/qtsp-count.json               # Décompte des QTSP cité par le livre blanc (annexe C)
+├── deploy/o2switch/                   # Configuration Apache (.htaccess) et notes de déploiement
+├── .github/workflows/                 # Déploiement, vérification des PR, contrôles périodiques
+├── mkdocs.yml                         # Configuration Material for MkDocs
+└── LICENSE                            # Creative Commons Attribution 4.0 International
 ```
+
+---
+
+## 🛠️ Outils et contribution
+
+Le portail est construit avec [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). Toute pull request vers `main` est vérifiée par `.github/workflows/check-pr.yml` (construction stricte, accessibilité, PDF) ; la fusion déclenche le déploiement (`deploy-o2switch.yml`), qui repasse les mêmes contrôles. Les deux workflows partagent l'action `.github/actions/build-portal`.
+
+**Construire et prévisualiser le site**
+
+```sh
+pip install -r requirements.txt
+mkdocs serve                  # http://127.0.0.1:8000, rechargé à chaque modification
+mkdocs build --strict         # échoue sur tout lien ou ancre interne cassé
+```
+
+**Scripts** (`scripts/`)
+
+| Script | Rôle | Prérequis |
+|---|---|---|
+| `export_pdf.py` | PDF balisés du livre blanc (FR, EN), du projet de statuts, du règlement intérieur et de la charte, dans `site/` | `pip install -r requirements-pdf.txt` (WeasyPrint, Pango) |
+| `check_pdf_ua.sh` | Validation PDF/UA-1 de ces PDF avec veraPDF (téléchargé et vérifié au premier lancement) | Java |
+| `check_a11y.js` | Accessibilité WCAG 2 AA (pa11y, moteur axe) de toutes les pages du site construit | Node.js, `npm install --no-save pa11y@9`, Chrome |
+| `build_diagrams.py` | Régénère les schémas SVG du livre blanc et l'organigramme de l'accueil | — |
+| `build_og_image.py` | Régénère l'image de partage par défaut (`docs/assets/og/og-portail.png`) | Chrome |
+| `count_qtsp.py` | Décompte des QTSP des listes de confiance de l'EEE (`data/qtsp-count.json`) | — |
+| `check_links.py` | Liens externes cassés (contrôle mensuel) | — |
+| `check_sites.sh` | Codes HTTP, redirections et certificats des sites OTSPI (contrôle quotidien) | curl, openssl |
+
+Chaîne complète, comme en CI :
+
+```sh
+mkdocs build --strict
+python scripts/export_pdf.py
+bash scripts/check_pdf_ua.sh
+npm install --no-save pa11y@9 && node scripts/check_a11y.js site
+```
+
+Les schémas et l'image de partage sont générés puis versionnés : après modification de leur source, relancer le script correspondant et commiter le résultat.
 
 ---
 

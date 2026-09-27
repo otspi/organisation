@@ -5,7 +5,7 @@ Ce dossier décrit l'hébergement du portail `about.otspi.org` chez o2switch (so
 ## Ce qui est en place
 
 - `htaccess` : redirection HTTPS, domaine canonique, page 404, en-têtes de sécurité, compression et durées de cache. Il est copié à la racine du site au déploiement.
-- `.github/workflows/deploy-o2switch.yml` : construit le site, exporte et valide les PDF (PDF/UA-1), ajoute le `.htaccess`, puis envoie tout en FTPS (TLS obligatoire, certificat vérifié).
+- `.github/workflows/deploy-o2switch.yml` : construit et contrôle le site avec l'action commune `.github/actions/build-portal` (construction stricte, accessibilité, export et validation PDF/UA-1 des PDF, mêmes contrôles que les pull requests), ajoute le `.htaccess`, puis envoie tout en FTPS (TLS obligatoire, certificat vérifié).
 - Un compte FTP dédié, cantonné au seul répertoire du site. Il est renseigné dans les secrets `O2_FTP_USERNAME` et `O2_FTP_PASSWORD` du dépôt ; l'hôte est dans la variable `O2_FTP_HOST`.
 
 ## Bascule (faite le 26 septembre 2026)

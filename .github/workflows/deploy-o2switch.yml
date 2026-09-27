@@ -21,33 +21,12 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
+      # Construction stricte, accessibilité, PDF et PDF/UA-1 : mêmes contrôles que les pull requests
+      - name: Build and check the portal
+        uses: ./.github/actions/build-portal
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt -r requirements-pdf.txt
-          sudo apt-get update
-          sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0 lftp
-
-      - name: Build documentation
-        run: mkdocs build --strict
-
-      - name: Export whitepaper PDF
-        run: python scripts/export_pdf.py
-
-      - name: Cache veraPDF
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/verapdf
-          key: verapdf-1.30.2
-
-      - name: Validate PDF/UA-1
-        run: bash scripts/check_pdf_ua.sh
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
 
       - name: Add Apache configuration
         run: cp deploy/o2switch/htaccess site/.htaccess
