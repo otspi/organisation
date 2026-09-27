@@ -2,6 +2,7 @@
 title: "STATUTS DE L'ASSOCIATION OTSPI"
 author: "Membres Fondateurs"
 date: "Projet — non encore adopté"
+pdf: otspi-projet-de-statuts.pdf
 ---
 
 # STATUTS DE L'ASSOCIATION

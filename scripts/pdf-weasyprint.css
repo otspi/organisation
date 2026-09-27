@@ -126,6 +126,7 @@ body {
   bookmark-level: none !important;
 }
 
+.md-typeset .wp-toc h2,
 .md-typeset .wp-toc h3,
 .md-typeset .wp-cover ~ h2 {
   bookmark-level: 1;
@@ -141,4 +142,22 @@ body {
 
 .md-typeset .wp-cover ~ h4 {
   bookmark-level: 3;
+}
+
+/* Textes juridiques (page de garde ajoutée par export_pdf.py) : signets limités aux sections
+   (titres) et à leurs sous-sections (articles), quel que soit leur niveau de titre. */
+.md-typeset .doc-cover ~ h2,
+.md-typeset .doc-cover ~ h3,
+.md-typeset .doc-cover ~ h4,
+.md-typeset .doc-cover ~ h5 {
+  bookmark-level: none;
+}
+
+.md-typeset .doc-cover ~ .doc-section {
+  bookmark-level: 1;
+  bookmark-state: closed;
+}
+
+.md-typeset .doc-cover ~ .doc-sub {
+  bookmark-level: 2;
 }

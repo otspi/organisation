@@ -1,3 +1,7 @@
+---
+pdf: otspi-reglement-interieur.pdf
+---
+
 # Règlement Intérieur de l'Association OTSPI
 ## « Open Trusted Service Provider Initiative »
 

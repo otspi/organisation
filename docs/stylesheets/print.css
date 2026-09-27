@@ -72,6 +72,29 @@
   @bottom-right { content: none; }
 }
 
+/* Gabarit des textes juridiques exportés en PDF (statuts, règlement intérieur, charte) : la page de
+   garde est ajoutée par scripts/export_pdf.py et porte la mention du pied de page (data-footer). */
+@page otspidoc {
+  @top-right {
+    content: string(section);
+    font: 8pt Inter, "Helvetica Neue", Arial, sans-serif;
+    color: #64748b;
+  }
+
+  @bottom-left {
+    content: string(doc-footer);
+    font: 8pt Inter, "Helvetica Neue", Arial, sans-serif;
+    color: #64748b;
+  }
+}
+
+@page otspidoc:first {
+  margin: 0;
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
 @media print {
   html {
     -webkit-print-color-adjust: exact;
@@ -165,6 +188,24 @@
 
   body:has(.wp-cover.wp-en) {
     page: whitepaper-en;
+  }
+
+  body:has(.doc-cover) {
+    page: otspidoc;
+  }
+
+  .md-typeset .doc-cover {
+    string-set: doc-footer attr(data-footer);
+  }
+
+  /* Texte juridique : les titres s'enchaînent sans saut de page, l'en-tête courant suit les sections */
+  .md-typeset .doc-cover ~ h2 {
+    break-before: auto;
+    margin-top: 9mm;
+  }
+
+  .md-typeset .doc-cover ~ .doc-section {
+    string-set: section content();
   }
 
   /* Page de garde à fond perdu, aux couleurs du logo en version claire
@@ -391,6 +432,7 @@
   }
 
   /* Sommaire */
+  .md-typeset .wp-toc h2,
   .md-typeset .wp-toc h3 {
     margin: 0 0 8mm;
     padding-bottom: 2.5mm;

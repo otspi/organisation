@@ -1,3 +1,7 @@
+---
+pdf: otspi-charte-ethique.pdf
+---
+
 # Charte d'éthique, de déontologie et de transparence publique
 
 **Association « Open Trusted Service Provider Initiative » (OTSPI)**  
