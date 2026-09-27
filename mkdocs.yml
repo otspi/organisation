@@ -58,7 +58,7 @@ theme:
 
 extra_javascript:
   - javascripts/a11y.js
-  - javascripts/analytics.js
+  - javascripts/analytics.js?v=2
 
 extra_css:
   - stylesheets/extra.css
