@@ -145,7 +145,6 @@
   .md-typeset .admonition,
   .md-typeset details,
   .md-typeset pre,
-  .md-typeset .mermaid,
   .md-typeset tr,
   .md-typeset img {
     break-inside: avoid;

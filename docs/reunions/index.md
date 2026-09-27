@@ -8,7 +8,7 @@ Toutes les réunions formelles de gouvernance font l'objet d'un ordre du jour pr
 
 ---
 
-## 🏛️ Typologie des Réunions
+## Typologie des réunions
 
 1. **Assemblées Générales (AG)** :
    - Assemblée Générale Ordinaire (AGO) : Approbation des comptes, rapport moral, budget, renouvellement du CA, confirmation des membres du CPC.
@@ -22,7 +22,7 @@ Toutes les réunions formelles de gouvernance font l'objet d'un ordre du jour pr
 
 ---
 
-## 🛡️ Règles de Publication et Protection RGPD / Sécurité
+## Règles de publication et protection RGPD / sécurité
 
 Avant toute publication publique d'un compte-rendu :
 
@@ -35,7 +35,7 @@ Avant toute publication publique d'un compte-rendu :
 
 ---
 
-## 📝 Modèle Type de Compte-Rendu Public
+## Modèle type de compte-rendu public
 
 ```markdown
 # Compte-Rendu : [Conseil d'Administration / CPC / AG / TSC] du [AAAA-MM-JJ]

@@ -6,7 +6,7 @@ Ce dossier rassemble l'ensemble des documents de cadrage stratégique, réglemen
 
 ---
 
-## 🏛️ Le Socle de Conformité Initial (Corpus d'Audit)
+## Le socle de conformité initial (corpus d'audit)
 
 1. **[Cadre Général des Politiques de Certification et Pratiques (CP/CPS)](cp-cps-cadre.md)** :
    - Document maître conforme à la **RFC 3647**, à l'**ETSI EN 319 401**, à l'**ETSI EN 319 411-1 / 411-2** et aux exigences **WebTrust / CA/Browser Forum** ;
@@ -28,7 +28,7 @@ Ce dossier rassemble l'ensemble des documents de cadrage stratégique, réglemen
 
 ---
 
-## 🧭 Documents Complémentaires de Cadrage
+## Documents complémentaires de cadrage
 
 - **[Livre blanc](../livre-blanc/index.md)** : vision et modèle d'intérêt général à but non lucratif inspiré de l'ISRG / Let's Encrypt appliqué aux services qualifiés eIDAS.
 - **[Manifeste pour une identité numérique libre et ouverte](https://www.otspi.org/manifeste.html)** : dix principes ouverts à la signature des personnes et des organisations.
@@ -37,7 +37,7 @@ Ce dossier rassemble l'ensemble des documents de cadrage stratégique, réglemen
 
 ---
 
-## 🔒 Principes d'Auditabilité et Sécurité
+## Principes d'auditabilité et de sécurité
 
 - Tous les documents de cadrage normatifs sont publics et consultables en libre accès dans le cadre de la redevabilité publique intégrale ;
 - Les seules exceptions concernent les secrets cryptographiques matériels (clés sous séquestre HSM) et les embargos temporaires de sécurité sur les vulnérabilités non corrigées (*Coordinated Vulnerability Disclosure*).
