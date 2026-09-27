@@ -73,8 +73,11 @@ extra_css:
   - stylesheets/print.css
 
 plugins:
+  # Recherche en français et en anglais (livre blanc et page des hébergements existent dans les deux langues)
   - search:
-      lang: fr
+      lang:
+        - fr
+        - en
 
 markdown_extensions:
   - admonition
