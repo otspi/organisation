@@ -1,11 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
   <rect width="300" height="300" rx="16" fill="#0B1120" />
-  <defs>
-    <mask id="mask-vert-dark">
-      <rect width="100%" height="100%" fill="#FFFFFF" />
-      <polygon points="164.84,127.54 238.64,53.74 223.36,38.46 149.56,112.26" fill="#000000" />
-    </mask>
-  </defs>
   <!-- Circular Seal Ring -->
   <path d="
     M 150.00 38.00
@@ -16,8 +10,10 @@
     A 39.60 39.60 0 1 1 150.00 70.40
     Z"
     fill="#F8FAFC"
-    fill-rule="evenodd"
-    mask="url(#mask-vert-dark)" />
+    fill-rule="evenodd" />
+  <!-- Encoche de la coche dans l'anneau, peinte à la couleur du fond plutôt que par un masque :
+       les moteurs PDF comme WeasyPrint ignorent les masques et effaceraient l'anneau entier -->
+  <polygon points="164.84,127.54 238.64,53.74 223.36,38.46 149.56,112.26" fill="#0B1120" />
   <!-- EU Stars -->
     <polygon points="115.65,147.22 117.34,151.64 122.07,151.89 118.39,154.86 119.61,159.43 115.65,156.85 111.68,159.43 112.91,154.86 109.23,151.89 113.95,151.64" fill="#FBBF24" />
     <polygon points="101.68,131.15 103.37,135.57 108.10,135.81 104.41,138.79 105.64,143.36 101.68,140.78 97.71,143.36 98.94,138.79 95.26,135.81 99.98,135.57" fill="#FBBF24" />
@@ -29,10 +25,10 @@
         stroke-width="14.40"
         stroke-linecap="round"
         stroke-linejoin="round" />
-  <text x="150" y="226" text-anchor="middle" font-family="'Ubuntu Sans', 'Liberation Sans', system-ui, -apple-system, sans-serif" font-size="42" font-weight="800" letter-spacing="-0.5">
+  <text x="150" y="226" text-anchor="middle" font-family="'Ubuntu Sans', 'Liberation Sans', Inter, system-ui, -apple-system, sans-serif" font-size="42" font-weight="800" letter-spacing="-0.5">
     <tspan fill="#38BDF8">O</tspan><tspan fill="#F8FAFC">TSPI</tspan>
   </text>
-  <text x="150" y="252" text-anchor="middle" font-family="'Ubuntu Sans', 'Liberation Sans', system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="#94A3B8" letter-spacing="1.8">
+  <text x="150" y="252" text-anchor="middle" font-family="'Ubuntu Sans', 'Liberation Sans', Inter, system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="#94A3B8" letter-spacing="1.8">
     OPEN TRUSTED SERVICE PROVIDER INITIATIVE
   </text>
 </svg>

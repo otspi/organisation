@@ -7,7 +7,7 @@ description: "Livre blanc de l'Open Trusted Service Provider Initiative : défai
 
 <div class="wp-cover" markdown>
 
-![OTSPI](../assets/logo-vertical.svg){ .wp-cover-logo }
+![OTSPI](../assets/logo-vertical-dark.svg){ .wp-cover-logo }
 
 <p class="wp-cover-kicker">Livre blanc</p>
 <p class="wp-cover-title">Une infrastructure de services de confiance qualifiés d'utilité publique pour eIDAS 2.0</p>
@@ -25,6 +25,8 @@ description: "Livre blanc de l'Open Trusted Service Provider Initiative : défai
 <p class="wp-download-note">La version PDF est balisée et validée au format PDF/UA-1 par l'outil de contrôle veraPDF ; cette validation automatique ne remplace pas un test avec un lecteur d'écran. La présente page (HTML) reste la version accessible de référence.</p>
 </div>
 
+<div class="wp-meta" markdown>
+
 | | |
 |---|---|
 | **Émetteur** | Initiative « Open Trusted Service Provider Initiative » (OTSPI), association loi 1901 en cours de constitution |
@@ -33,6 +35,8 @@ description: "Livre blanc de l'Open Trusted Service Provider Initiative : défai
 | **Destinataires** | Administrations, décideurs publics, organes de contrôle, organismes d'évaluation de la conformité (CAB), hébergeurs, laboratoires de recherche, écosystème open source |
 | **Licence** | Creative Commons Attribution 4.0 International (CC-BY-4.0) |
 | **Contact** | [contact@otspi.org](mailto:contact@otspi.org) |
+
+</div>
 
 !!! note "Nature du document"
     Le présent livre blanc expose une intention et une architecture cible. Il ne constitue ni une Politique d'Horodatage, ni une Déclaration des Pratiques de Certification (DPC), ni un engagement contractuel de service. Les références à des produits ou fournisseurs sont données à titre indicatif ; leur sélection définitive relèvera de procédures de mise en concurrence et de l'approbation du Comité des Politiques de Confiance (CPC).
@@ -376,8 +380,9 @@ Tout éditeur de solution de signature, commercial ou libre, peut s'appuyer sur 
 ### 4.1. Hiérarchie de certification
 
 <!-- diagram:hierarchy:start -->
-<figure class="wp-diagram" markdown="0">
+<figure class="wp-diagram" id="figure-1" markdown="0">
 <svg class="wp-svg" viewBox="0 0 760 350" role="img" aria-labelledby="fr-h-t fr-h-d" xmlns="http://www.w3.org/2000/svg"><title id="fr-h-t">Hiérarchie de certification qualifiée d&#x27;OTSPI</title><desc id="fr-h-d">L&#x27;AC racine OTSPI, hors ligne et sous quorum, certifie l&#x27;AC intermédiaire d&#x27;horodatage, qui certifie les unités d&#x27;horodatage TSU-1 (site A) et TSU-2 (site B). Elle certifiera aussi de futures AC qualifiées de cachet, de signature et d&#x27;attestations.</desc><defs><marker id="arr-fr-h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="dg-arrow" d="M0 0 L10 5 L0 10 z"/></marker><marker id="arc-fr-h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="dg-arrow-cross" d="M0 0 L10 5 L0 10 z"/></marker></defs><path class="dg-edge" d="M380 74 C380 104 190 100 190 128" marker-end="url(#arr-fr-h)"/><path class="dg-edge dg-dash" d="M380 74 C380 104 570 100 570 128" marker-end="url(#arr-fr-h)"/><path class="dg-edge" d="M190 198 C190 228 100 224 100 256" marker-end="url(#arr-fr-h)"/><path class="dg-edge" d="M190 198 C190 228 290 224 290 256" marker-end="url(#arr-fr-h)"/><rect class="dg-root" x="230" y="10" width="300" height="64" rx="8"/><text class="dg-t" x="380.0" y="37" text-anchor="middle">AC racine OTSPI</text><text class="dg-s" x="380.0" y="58" text-anchor="middle">hors ligne · air-gap · quorum M-de-N</text><rect class="dg-box" x="60" y="130" width="260" height="68" rx="8"/><text class="dg-t" x="190.0" y="157" text-anchor="middle">AC intermédiaire Horodatage</text><text class="dg-s" x="190.0" y="178" text-anchor="middle">hors ligne ou en ligne restreinte</text><rect class="dg-future" x="440" y="130" width="260" height="68" rx="8"/><text class="dg-t" x="570.0" y="157" text-anchor="middle">AC qualifiées futures</text><text class="dg-s" x="570.0" y="178" text-anchor="middle">cachet · signature · attestations</text><rect class="dg-box" x="10" y="258" width="180" height="68" rx="8"/><text class="dg-t" x="100.0" y="285" text-anchor="middle">Unité d&#x27;horodatage TSU-1</text><text class="dg-s" x="100.0" y="306" text-anchor="middle">HSM en ligne — site A</text><rect class="dg-box" x="200" y="258" width="180" height="68" rx="8"/><text class="dg-t" x="290.0" y="285" text-anchor="middle">Unité d&#x27;horodatage TSU-2</text><text class="dg-s" x="290.0" y="306" text-anchor="middle">HSM en ligne — site B</text></svg>
+<figcaption><span class="wp-fig-num">Figure 1</span> — Hiérarchie de certification qualifiée d&#x27;OTSPI</figcaption>
 </figure>
 <!-- diagram:hierarchy:end -->
 
@@ -385,11 +390,12 @@ Tout éditeur de solution de signature, commercial ou libre, peut s'appuyer sur 
 - Chaque **unité d'horodatage (TSU)** dispose d'une clé propre, exclusivement réservée à la signature de jetons d'horodatage, générée et conservée dans un module cryptographique certifié.
 - La période d'utilisation des clés TSU est inférieure à la durée de validité de leur certificat, conformément à l'ETSI EN 319 421, afin de garantir la vérifiabilité des jetons émis en fin de période.
 - Les futures **AC qualifiées** de cachet, de signature et d'attestations (cf. § 6.1, phase 5) seront rattachées à cette même racine qualifiée, chacune sous une AC intermédiaire dédiée à un seul usage.
-- Le futur service de certificats TLS (cf. § 2.4) repose sur **deux racines distinctes** de la racine qualifiée d'horodatage : une **racine WebTrust**, destinée aux magasins de confiance des systèmes d'exploitation et des navigateurs, et une **racine QWAC**, inscrite sur la liste de confiance européenne. Elles appliquent les mêmes principes de gouvernance (air-gap, quorum, cérémonies) et ne partagent aucune clé avec les AC d'horodatage, de cachet ou de signature.
+- Le futur service de certificats TLS (cf. § 2.4) repose sur **deux racines distinctes** de la racine qualifiée d'horodatage ([figure 2](#figure-2)) : une **racine WebTrust**, destinée aux magasins de confiance des systèmes d'exploitation et des navigateurs, et une **racine QWAC**, inscrite sur la liste de confiance européenne. Elles appliquent les mêmes principes de gouvernance (air-gap, quorum, cérémonies) et ne partagent aucune clé avec les AC d'horodatage, de cachet ou de signature.
 
 <!-- diagram:tls:start -->
-<figure class="wp-diagram" markdown="0">
+<figure class="wp-diagram" id="figure-2" markdown="0">
 <svg class="wp-svg" viewBox="0 0 760 390" role="img" aria-labelledby="fr-t-t fr-t-d" xmlns="http://www.w3.org/2000/svg"><title id="fr-t-t">Hiérarchies de certification TLS d&#x27;OTSPI</title><desc id="fr-t-d">Deux racines distinctes : une racine WebTrust pour les magasins des navigateurs, une racine QWAC inscrite sur la liste de confiance européenne. La racine WebTrust certifie une sous-AC DV, qui émet des certificats serveur DV par ACME instantané. Une sous-AC hybride OV / QWAC, à clé unique, est certifiée par la racine WebTrust et, par signature croisée, par la racine QWAC ; elle émet des certificats OV / QWAC.</desc><defs><marker id="arr-fr-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="dg-arrow" d="M0 0 L10 5 L0 10 z"/></marker><marker id="arc-fr-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="dg-arrow-cross" d="M0 0 L10 5 L0 10 z"/></marker></defs><path class="dg-edge" d="M200 74 L200 140" marker-end="url(#arr-fr-t)"/><path class="dg-edge" d="M300 74 C300 108 500 104 500 138" marker-end="url(#arr-fr-t)"/><path class="dg-cross" d="M600 74 L600 138" marker-end="url(#arc-fr-t)"/><text class="dg-label" x="610" y="112">signature croisée</text><path class="dg-edge" d="M200 212 L200 288" marker-end="url(#arr-fr-t)"/><path class="dg-edge" d="M560 212 L560 288" marker-end="url(#arr-fr-t)"/><rect class="dg-root" x="60" y="10" width="280" height="64" rx="8"/><text class="dg-t" x="200.0" y="37" text-anchor="middle">Racine WebTrust</text><text class="dg-s" x="200.0" y="58" text-anchor="middle">magasins OS et navigateurs</text><rect class="dg-root" x="420" y="10" width="280" height="64" rx="8"/><text class="dg-t" x="560.0" y="37" text-anchor="middle">Racine QWAC</text><text class="dg-s" x="560.0" y="58" text-anchor="middle">liste de confiance européenne</text><rect class="dg-box" x="60" y="142" width="280" height="70" rx="8"/><text class="dg-t" x="200.0" y="169" text-anchor="middle">Sous-AC DV</text><text class="dg-s" x="200.0" y="190" text-anchor="middle">WebTrust uniquement · HSM standard</text><rect class="dg-box" x="420" y="142" width="280" height="70" rx="8"/><text class="dg-t" x="560.0" y="169" text-anchor="middle">Sous-AC hybride OV / QWAC</text><text class="dg-s" x="560.0" y="190" text-anchor="middle">une clé · deux certificats d&#x27;AC</text><rect class="dg-box" x="60" y="290" width="280" height="70" rx="8"/><text class="dg-t" x="200.0" y="317" text-anchor="middle">Certificats serveur DV</text><text class="dg-s" x="200.0" y="338" text-anchor="middle">usage Web · ACME instantané</text><rect class="dg-box" x="420" y="290" width="280" height="70" rx="8"/><text class="dg-t" x="560.0" y="317" text-anchor="middle">Certificats serveur OV / QWAC</text><text class="dg-s" x="560.0" y="338" text-anchor="middle">DSP2, eIDAS · ACME avec liaison de compte</text></svg>
+<figcaption><span class="wp-fig-num">Figure 2</span> — Hiérarchies de certification TLS d&#x27;OTSPI</figcaption>
 </figure>
 <!-- diagram:tls:end -->
 

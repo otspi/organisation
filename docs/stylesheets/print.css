@@ -23,35 +23,51 @@
 
   @bottom-right {
     content: counter(page) " / " counter(pages);
-    font: 8pt Roboto, "Helvetica Neue", Arial, sans-serif;
+    font: 8pt Inter, "Helvetica Neue", Arial, sans-serif;
     color: #64748b;
   }
 }
 
 /* Gabarit nommé du livre blanc : pied de page identifiant le document */
 @page whitepaper {
+  @top-right {
+    content: string(section);
+    font: 8pt Inter, "Helvetica Neue", Arial, sans-serif;
+    color: #64748b;
+  }
+
   @bottom-left {
     content: "OTSPI — Livre blanc · document de consultation v0.9 · CC-BY-4.0";
-    font: 8pt Roboto, "Helvetica Neue", Arial, sans-serif;
+    font: 8pt Inter, "Helvetica Neue", Arial, sans-serif;
     color: #64748b;
   }
 }
 
 @page whitepaper:first {
+  margin: 0;
+  @top-right { content: none; }
   @bottom-left { content: none; }
   @bottom-right { content: none; }
 }
 
 /* Gabarit anglais du livre blanc */
 @page whitepaper-en {
+  @top-right {
+    content: string(section);
+    font: 8pt Inter, "Helvetica Neue", Arial, sans-serif;
+    color: #64748b;
+  }
+
   @bottom-left {
     content: "OTSPI — White paper · public consultation v0.9 · CC-BY-4.0";
-    font: 8pt Roboto, "Helvetica Neue", Arial, sans-serif;
+    font: 8pt Inter, "Helvetica Neue", Arial, sans-serif;
     color: #64748b;
   }
 }
 
 @page whitepaper-en:first {
+  margin: 0;
+  @top-right { content: none; }
   @bottom-left { content: none; }
   @bottom-right { content: none; }
 }
@@ -82,6 +98,11 @@
   .md-content__inner {
     margin: 0 !important;
     padding: 0 !important;
+  }
+
+  /* Espaceur de Material en tête d'article : il décalerait la page de garde à fond perdu */
+  .md-content__inner::before {
+    display: none !important;
   }
 
   .md-grid {
@@ -147,13 +168,17 @@
     page: whitepaper-en;
   }
 
-  .wp-cover {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 245mm;
-    text-align: center;
+  /* Page de garde à fond perdu, aux couleurs du logo en version claire
+     (son fond #0b1120 se confond avec celui de la page) */
+  .md-typeset .wp-cover {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    height: 297mm;
+    margin: 0;
+    padding: 22mm 24mm 20mm;
+    background: #0b1120;
+    color: #f8fafc;
     break-after: page;
   }
 
@@ -162,38 +187,59 @@
   }
 
   .md-typeset .wp-cover .wp-cover-logo {
-    width: 55mm;
-    margin-bottom: 18mm;
+    display: block;
+    width: 58mm;
+    margin: 0 0 0 -8mm;
   }
 
   .md-typeset .wp-cover .wp-cover-kicker {
+    margin-top: 32mm;
+    margin-bottom: 7mm;
+    color: #38bdf8;
     font-size: 11pt;
     font-weight: 700;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--otspi-primary);
-    margin-bottom: 6mm;
   }
 
   .md-typeset .wp-cover .wp-cover-title {
-    font-size: 22pt;
-    font-weight: 700;
-    line-height: 1.25;
-    color: #0f172a;
     max-width: 150mm;
-    margin-bottom: 14mm;
+    color: #ffffff;
+    font-size: 30pt;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
   }
 
+  .md-typeset .wp-cover .wp-cover-title::after {
+    content: "";
+    display: block;
+    width: 28mm;
+    height: 1.5mm;
+    margin-top: 11mm;
+    background: #fbbf24;
+  }
+
+  /* Mentions ancrées en bas de page (l'ordre de lecture reste celui du document) */
   .md-typeset .wp-cover .wp-cover-meta {
+    position: absolute;
+    right: 24mm;
+    bottom: 30mm;
+    left: 24mm;
+    padding-top: 6mm;
+    border-top: 0.5pt solid #334155;
+    color: #cbd5e1;
     font-size: 10.5pt;
-    color: #334155;
     line-height: 1.7;
   }
 
   .md-typeset .wp-cover .wp-cover-license {
-    margin-top: 24mm;
+    position: absolute;
+    right: 24mm;
+    bottom: 20mm;
+    left: 24mm;
+    color: #94a3b8;
     font-size: 8.5pt;
-    color: #64748b;
   }
 
   /* Le titre et le sous-titre écran sont remplacés par la page de garde */
@@ -224,19 +270,185 @@
   .wp-cover ~ hr {
     display: none;
   }
+
+  /* Typographie du livre blanc */
+  /* Trait d'union ASCII pour la césure : le trait typographique (U+2010) manque à la police */
+  .md-typeset:has(> .wp-cover) {
+    color: #1e293b;
+    hyphenate-character: "-";
+  }
+
+  .md-typeset:has(> .wp-cover) p,
+  .md-typeset:has(> .wp-cover) li {
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  /* Colonnes étroites et page de garde : le justifié y creuserait des blancs */
+  .md-typeset .wp-cover p,
+  .md-typeset .grid.cards.wp-figures p,
+  .md-typeset .grid.cards.wp-figures li {
+    text-align: left;
+    hyphens: manual;
+  }
+
+  .md-typeset .wp-cover ~ h2 {
+    margin: 0 0 6mm;
+    padding-bottom: 2.5mm;
+    border-bottom: 1.5pt solid var(--otspi-primary);
+    color: #0f2a6b;
+    font-size: 18pt;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    string-set: section content();
+  }
+
+  /* Le sous-titre masqué ne doit pas alimenter l'en-tête courant */
+  .md-typeset .wp-cover ~ h1 + h2 {
+    string-set: section "";
+  }
+
+  .md-typeset .wp-cover ~ h3 {
+    margin: 7mm 0 2.5mm;
+    color: var(--otspi-primary);
+    font-size: 12.5pt;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .md-typeset .wp-cover ~ h4 {
+    margin: 5mm 0 2mm;
+    color: #1e293b;
+    font-size: 10.5pt;
+    font-weight: 700;
+  }
+
+  /* Les titres ne restent jamais seuls en bas de page */
+  .md-typeset .wp-cover ~ h3,
+  .md-typeset .wp-cover ~ h4 {
+    break-after: avoid;
+    break-inside: avoid;
+  }
+
+  /* Encadrés : filet de couleur, sans ombre ni arrondi */
+  .md-typeset:has(> .wp-cover) .admonition,
+  .md-typeset:has(> .wp-cover) details {
+    margin: 5mm 0;
+    border-width: 0 0 0 2.5pt;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 9pt;
+  }
+
+  .md-typeset:has(> .wp-cover) .admonition-title,
+  .md-typeset:has(> .wp-cover) summary {
+    font-size: 9pt;
+  }
+
+  /* Tableaux */
+  .md-typeset:has(> .wp-cover) table:not([class]) {
+    border: none;
+    border-top: 1.5pt solid var(--otspi-primary);
+    border-bottom: 0.75pt solid #94a3b8;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .md-typeset:has(> .wp-cover) table:not([class]) th {
+    background: #eef2fb;
+    color: #0f2a6b;
+    font-weight: 700;
+  }
+
+  .md-typeset:has(> .wp-cover) table:not([class]) th,
+  .md-typeset:has(> .wp-cover) table:not([class]) td {
+    padding: 1.6mm 2.5mm;
+    border-top: 0.5pt solid #e2e8f0;
+    text-align: left;
+    hyphens: auto;
+  }
+
+  .md-typeset:has(> .wp-cover) table:not([class]) thead {
+    display: table-header-group;
+  }
+
+  .md-typeset:has(> .wp-cover) table:not([class]) tbody tr:nth-child(even) {
+    background: #f8fafc;
+  }
+
+  .md-typeset .wp-meta table:not([class]) {
+    font-size: 9pt;
+  }
+
+  /* Notes de bas de page */
+  .md-typeset:has(> .wp-cover) .footnote {
+    font-size: 8pt;
+    color: #334155;
+  }
+
+  .md-typeset:has(> .wp-cover) .footnote li {
+    text-align: left;
+  }
+
+  /* Sommaire */
+  .md-typeset .wp-toc h3 {
+    margin: 0 0 8mm;
+    padding-bottom: 2.5mm;
+    border-bottom: 1.5pt solid var(--otspi-primary);
+    color: #0f2a6b;
+    font-size: 18pt;
+    font-weight: 700;
+  }
+
+  .md-typeset .wp-toc li {
+    margin: 0;
+    padding: 2.2mm 0;
+    border-bottom: 0.5pt solid #e2e8f0;
+    font-size: 10.5pt;
+    text-align: left;
+  }
+
+  .md-typeset .wp-toc a {
+    color: #1e293b;
+    text-decoration: none !important;
+  }
 }
 
 /* Grille des chiffres clés du livre blanc */
 @media print {
+  /* La grille porte sur la liste : posée sur le conteneur, elle tasserait les six cartes
+     dans la première colonne. */
   .md-typeset .grid.cards.wp-figures {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
+    display: block;
   }
 
-  .md-typeset .grid.cards.wp-figures > ul > li,
-  .md-typeset .grid.cards.wp-figures li {
+  .md-typeset .grid.cards.wp-figures > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4mm;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .md-typeset .grid.cards.wp-figures > ul > li {
+    margin: 0;
+    padding: 3.5mm 4mm;
+    border: 0.5pt solid #cbd5e1;
+    border-top: 2.5pt solid var(--otspi-primary);
+    border-radius: 0;
+    box-shadow: none;
+    background: #f8fafc;
+    font-size: 8.5pt;
+    line-height: 1.4;
     break-inside: avoid;
+  }
+
+  .md-typeset .grid.cards.wp-figures .wp-value {
+    color: var(--otspi-primary);
+    font-size: 17pt;
+    line-height: 1.15;
   }
 }
 
@@ -249,5 +461,15 @@
 
   .md-typeset .wp-svg {
     min-width: 0;
+  }
+
+  .md-typeset .wp-diagram figcaption {
+    margin-top: 3mm;
+    color: #475569;
+    font-size: 8.5pt;
+  }
+
+  .md-typeset .wp-fig-num {
+    color: #0f2a6b;
   }
 }
