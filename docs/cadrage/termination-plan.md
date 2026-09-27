@@ -1,12 +1,12 @@
-# Plan de Fin d'Activité et de Cessation des Services de Confiance
-## (*Termination Plan* conforme à l'article 24.2.e du Règlement eIDAS et à l'ETSI EN 319 401 § 7.12)
+# Plan de fin d'activité et de cessation des services de confiance
+## (*Termination Plan* conforme à l'article 24.2.e du règlement eIDAS et à l'ETSI EN 319 401 § 7.12)
 
 **Association « Open Trusted Service Provider Initiative » (OTSPI)**  
 *Approuvé par le Bureau et le Comité des Politiques de Confiance (CPC).*
 
 ---
 
-## 1. Contexte, Objet et Cadre Légal
+## 1. Contexte, objet et cadre légal
 
 Conformément à l'**article 24 paragraphe 2 point e) du Règlement (UE) n° 910/2014 (eIDAS)** et à la clause 7.12 de la norme **ETSI EN 319 401**, tout prestataire de services de confiance qualifié doit maintenir un plan à jour garantissant la continuité ou la cessation ordonnée de ses activités en cas de liquidation, de faillite ou d'arrêt programmé de service.
 
@@ -18,7 +18,7 @@ Le présent document formalise le **Plan de Fin d'Activité (*Termination Plan*)
 
 ---
 
-## 2. Déclenchement du Plan de Fin d'Activité
+## 2. Déclenchement du plan de fin d'activité
 
 Le plan de fin d'activité est déclenché dans les cas suivants :
 - Décision volontaire de cessation de service votée par l'Assemblée Générale Extraordinaire (Article 10 et 11 des Statuts) ;
@@ -27,7 +27,7 @@ Le plan de fin d'activité est déclenché dans les cas suivants :
 
 ---
 
-## 3. Procédure Opérationnelle de Notification et Délais
+## 3. Procédure opérationnelle de notification et délais
 
 Dès la décision ou le constat de cessation d'activité :
 
@@ -42,7 +42,7 @@ Dès la décision ou le constat de cessation d'activité :
 
 ---
 
-## 4. Révocation des Autorités et Révocation des Certificats
+## 4. Révocation des autorités et révocation des certificats
 
 1. **Arrêt immédiat des nouvelles émissions** : Dès la date d'effet de la fin de service, aucune nouvelle clé ou certificat ne peut être émis.
 2. **Génération d'une CRL finale complète** :  
@@ -54,7 +54,7 @@ Dès la décision ou le constat de cessation d'activité :
 
 ---
 
-## 5. Maintien des Annuaires de Révocation et Validateurs (CRL / OCSP)
+## 5. Maintien des annuaires de révocation et validateurs (CRL / OCSP)
 
 Même après l'arrêt d'émission, l'accès public aux données d'état de révocation doit être assuré pour toute la durée de validité résiduelle des certificats émis :
 1. **Périmètre temporel** : Les listes de révocation finales (CRL) et validateurs d'état restent consultables publiquement pendant au moins **dix (10) ans** suivant la cessation de l'activité.
@@ -63,7 +63,7 @@ Même après l'arrêt d'émission, l'accès public aux données d'état de révo
 
 ---
 
-## 6. Archivage Probatoire à Long Terme des Journaux d'Audit (10 à 30 ans)
+## 6. Archivage probatoire à long terme des journaux d'audit (10 à 30 ans)
 
 Conformément à l'ETSI EN 319 401 et aux exigences réglementaires de conservation de la preuve électronique :
 1. **Données à archiver** :
@@ -77,7 +77,7 @@ Conformément à l'ETSI EN 319 401 et aux exigences réglementaires de conservat
 
 ---
 
-## 7. Convention de Séquestre Financier et Fonds de Garantie (Article 12 bis des Statuts)
+## 7. Convention de séquestre financier et fonds de garantie (article 12 bis des statuts)
 
 Pour garantir que la fin d'activité ne sera pas compromise par une défaillance financière :
 1. **Sanctuarisation du Fonds de Réserve Opérationnelle** :  
