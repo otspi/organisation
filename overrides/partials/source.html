@@ -1,7 +1,9 @@
 {#-
-  Lien vers le dépôt, sans les statistiques GitHub : Material les récupère depuis
-  api.github.com à chaque visite, ce qui contacte un service tiers. Le lien seul est conservé.
+  Appel à l'action commun avec www.otspi.org, puis lien vers le dépôt, sans les statistiques
+  GitHub : Material les récupère depuis api.github.com à chaque visite, ce qui contacte un service
+  tiers. Le partiel sert à la fois à l'en-tête (écran large) et au menu latéral (mobile).
 -#}
+<a href="https://www.otspi.org/manifeste.html" class="otspi-cta">Signer le manifeste</a>
 <a href="{{ config.repo_url }}" title="{{ lang.t('source') }}" class="md-source">
   <div class="md-source__icon md-icon">
     {% set icon = config.theme.icon.repo or "fontawesome/brands/git-alt" %}

@@ -103,6 +103,109 @@
 }
 
 /* --------------------------------------------------------------------------
+   Thème clair : en-tête blanc, comme www.otspi.org (le thème sombre garde le bleu nuit)
+   -------------------------------------------------------------------------- */
+.md-logo img.otspi-logo--dark,
+[data-md-color-scheme="slate"] .md-logo img.otspi-logo--light {
+  display: none;
+}
+
+[data-md-color-scheme="slate"] .md-logo img.otspi-logo--dark {
+  display: block;
+}
+
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: #ffffff;
+  color: var(--otspi-navy);
+}
+
+[data-md-color-scheme="default"] .md-header {
+  border-bottom: 0;
+}
+
+[data-md-color-scheme="default"] .md-tabs {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+[data-md-color-scheme="default"] .md-tabs__item--active .md-tabs__link {
+  color: var(--otspi-navy);
+  box-shadow: inset 0 -2px 0 var(--otspi-primary);
+}
+
+[data-md-color-scheme="default"] .md-header--shadow {
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+}
+
+/* Champ de recherche lisible sur fond blanc */
+@media screen and (min-width: 60em) {
+  [data-md-color-scheme="default"] .md-search__form {
+    background-color: #f1f5f9;
+  }
+
+  [data-md-color-scheme="default"] .md-search__input,
+  [data-md-color-scheme="default"] .md-search__icon {
+    color: var(--otspi-navy);
+  }
+
+  [data-md-color-scheme="default"] .md-search__input::placeholder {
+    color: #475569;
+  }
+}
+
+/* Titre du menu latéral (mobile), assorti à l'en-tête */
+[data-md-color-scheme="default"] .md-nav--primary .md-nav__title[for="__drawer"] {
+  background-color: #ffffff;
+  color: var(--otspi-navy);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Appel à l'action commun avec la vitrine (overrides/partials/source.html) */
+.otspi-cta {
+  display: inline-block;
+  flex: none;
+  margin-right: 0.8rem;
+  padding: 0.4em 0.9em;
+  border-radius: 8px;
+  background-color: #ffcc00;
+  color: var(--otspi-navy);
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.otspi-cta:hover,
+.otspi-cta:focus-visible {
+  background-color: #ffd83d;
+  color: var(--otspi-navy);
+}
+
+/* En-tête (écran large, où Material l'affiche) : bouton puis lien vers le dépôt */
+@media screen and (min-width: 60em) {
+  .md-header__source {
+    display: flex;
+    align-items: center;
+    width: auto;
+    max-width: none;
+  }
+}
+
+/* Menu latéral (mobile, où Material l'affiche) : bouton au-dessus du lien vers le dépôt */
+@media screen and (max-width: 76.2344em) {
+  .md-nav__source {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .md-nav__source .otspi-cta {
+    margin-right: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Titres : hiérarchie nette, sans le gris clair et la graisse légère de Material
    -------------------------------------------------------------------------- */
 .md-typeset h1 {
