@@ -88,15 +88,15 @@ SVG_STYLE = """
 .dg-box{fill:#fff;stroke:#b8bcc4;stroke-width:1.5}
 .dg-root{fill:#e8eefc;stroke:#1a3d8f;stroke-width:2}
 .dg-future{fill:none;stroke:#6b7280;stroke-width:1.5;stroke-dasharray:6 5}
-.dg-t{fill:#1f2937;font-size:12.5px;font-weight:700;font-family:sans-serif}
-.dg-s{fill:#4b5563;font-size:12px;font-family:sans-serif}
+.dg-t{fill:#1f2937;font-size:12.5px;font-weight:700;font-family:Inter,sans-serif}
+.dg-s{fill:#4b5563;font-size:12px;font-family:Inter,sans-serif}
 .dg-edge,.dg-cross{fill:none;stroke-width:1.8}
 .dg-edge{stroke:#4b5563}
 .dg-dash{stroke-dasharray:5 5}
 .dg-cross{stroke:#1a3d8f;stroke-dasharray:7 5}
 .dg-arrow{fill:#4b5563}
 .dg-arrow-cross{fill:#1a3d8f}
-.dg-label{fill:#1a3d8f;font-size:12px;font-weight:700;font-family:sans-serif}
+.dg-label{fill:#1a3d8f;font-size:12px;font-weight:700;font-family:Inter,sans-serif}
 """
 
 

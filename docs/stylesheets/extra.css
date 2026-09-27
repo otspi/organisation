@@ -389,6 +389,20 @@
   overflow-x: auto;
 }
 
+.md-typeset .wp-diagram figcaption {
+  max-width: 820px;
+  margin: 0.8em auto 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.72rem;
+  font-style: normal;
+  text-align: center;
+}
+
+.md-typeset .wp-fig-num {
+  color: var(--md-default-fg-color);
+  font-weight: 700;
+}
+
 .md-typeset .wp-svg {
   display: block;
   width: 100%;

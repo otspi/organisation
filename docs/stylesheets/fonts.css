@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Police Inter (SIL Open Font License 1.1, voir assets/fonts/inter/OFL.txt),
+   servie par le portail lui-même : aucune requête vers un service tiers.
+   Sous-ensemble latin (français, anglais) de la distribution Fontsource 5.3.0.
+   Le PDF du livre blanc l'embarque aussi : son rendu ne dépend plus des polices
+   installées sur la machine qui le génère.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../assets/fonts/inter/inter-latin-300-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/inter/inter-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/inter/inter-latin-400-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/inter/inter-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/inter/inter-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/inter/inter-latin-700-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../assets/fonts/inter/inter-latin-800-normal.woff2") format("woff2");
+}
+
+/* Material compose le texte avec --md-text-font, suivi des polices du système en repli */
+:root {
+  --md-text-font: "Inter";
+}

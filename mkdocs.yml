@@ -37,7 +37,8 @@ theme:
   favicon: assets/favicon.svg
   icon:
     repo: fontawesome/brands/github
-  # Polices du système : aucune requête vers Google Fonts (l'adresse IP du visiteur y serait transmise)
+  # Pas de Google Fonts (l'adresse IP du visiteur y serait transmise) : la police Inter est
+  # auto-hébergée (stylesheets/fonts.css)
   font: false
   features:
     - navigation.tabs
@@ -61,6 +62,7 @@ extra_javascript:
   - javascripts/analytics.js?v=2
 
 extra_css:
+  - stylesheets/fonts.css
   - stylesheets/extra.css
   - stylesheets/print.css
 

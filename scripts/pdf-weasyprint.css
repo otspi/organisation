@@ -118,3 +118,27 @@ body {
   content: leader(".") target-counter(attr(href url), page);
   color: #64748b;
 }
+
+/* Signets du PDF : sections et annexes au premier niveau, sous-sections repliées. Le titre et le
+   sous-titre masqués n'en produisent pas : la page de garde et le titre du document en tiennent lieu. */
+.wp-cover ~ h1,
+.wp-cover ~ h1 + h2 {
+  bookmark-level: none !important;
+}
+
+.md-typeset .wp-toc h3,
+.md-typeset .wp-cover ~ h2 {
+  bookmark-level: 1;
+}
+
+.md-typeset .wp-cover ~ h2 {
+  bookmark-state: closed;
+}
+
+.md-typeset .wp-cover ~ h3 {
+  bookmark-level: 2;
+}
+
+.md-typeset .wp-cover ~ h4 {
+  bookmark-level: 3;
+}

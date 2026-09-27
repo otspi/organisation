@@ -112,8 +112,10 @@ def tls(t, uid):
     return "".join(parts)
 
 
-def figure(svg):
-    return f'<figure class="wp-diagram" markdown="0">\n{svg}\n</figure>'
+def figure(svg, number, title):
+    """Enveloppe un schéma dans une figure légendée et numérotée, ancrée sur #figure-N pour les renvois."""
+    return (f'<figure class="wp-diagram" id="figure-{number}" markdown="0">\n{svg}\n'
+            f'<figcaption><span class="wp-fig-num">Figure {number}</span> — {escape(title)}</figcaption>\n</figure>')
 
 
 def replace_block(text, name, block):
@@ -126,8 +128,8 @@ def main():
     for lang, path in (("fr", "docs/livre-blanc/index.md"), ("en", "docs/white-paper/index.md")):
         page = ROOT / path
         text = page.read_text(encoding="utf-8")
-        text = replace_block(text, "hierarchy", figure(hierarchy(TEXT[lang], f"{lang}-h")))
-        text = replace_block(text, "tls", figure(tls(TEXT[lang], f"{lang}-t")))
+        text = replace_block(text, "hierarchy", figure(hierarchy(TEXT[lang], f"{lang}-h"), 1, TEXT[lang]["h_title"]))
+        text = replace_block(text, "tls", figure(tls(TEXT[lang], f"{lang}-t"), 2, TEXT[lang]["t_title"]))
         page.write_text(text, encoding="utf-8")
         print(f"{path} : schémas régénérés")
 
