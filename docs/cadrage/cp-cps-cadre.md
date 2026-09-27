@@ -1,4 +1,4 @@
-# Cadre Général des Politiques de Certification et Pratiques (CP/CPS)
+# Cadre général des politiques de certification et pratiques (CP/CPS)
 ## Conforme à la RFC 3647, ETSI EN 319 401, ETSI EN 319 411-1 / 411-2 et WebTrust
 
 **Association « Open Trusted Service Provider Initiative » (OTSPI)**  
@@ -25,7 +25,7 @@ Le présent document définit les Politiques de Certification (*Certificate Poli
 
 ---
 
-## 2. Répertoires de Publication et Référentiels
+## 2. Répertoires de publication et référentiels
 
 ### 2.1. Répertoires publics
 OTSPI maintient un répertoire accessible publiquement, de façon continue (24h/24, 7j/7), neutre et gratuite, contenant :
@@ -39,7 +39,7 @@ La disponibilité des services de publication de révocation (CRL/OCSP) fait l'o
 
 ---
 
-## 3. Identification et Authentification (I&A)
+## 3. Identification et authentification (I&A)
 
 ### 3.1. Enregistrement initial
 - **Officiers d'Autorité et Gardiens de clés** : Identification civile formelle en présence physique ou par PVID qualifié, vérification du casier judiciaire, serment déontologique (Article 5 du Règlement Intérieur).
@@ -50,7 +50,7 @@ Tous les accès administratifs et d'émission requièrent des clés matérielles
 
 ---
 
-## 4. Exigences Opérationnelles du Cycle de Vie des Certificats
+## 4. Exigences opérationnelles du cycle de vie des certificats
 
 ### 4.1. Demande et émission de certificats
 Toute demande de certificat suit un processus automatisé ou validé par un Officier d'Autorité selon le profil d'usage. L'émission est signée exclusivement au sein d'un module matériel de sécurité (HSM) qualifié.
@@ -62,7 +62,7 @@ Toute demande de certificat suit un processus automatisé ou validé par un Offi
 
 ---
 
-## 5. Contrôles de Sécurité Physique, Environnementale et Procédurale
+## 5. Contrôles de sécurité physique, environnementale et procédurale
 
 ### 5.1. Sécurité physique des sites d'hébergement
 Les composants serveurs et modules HSM sont hébergés au sein de datacenters certifiés ISO/IEC 27001 et qualifiés SecNumCloud (ou équivalent européen souverain), situés exclusivement sur le territoire de l'Union Européenne :
@@ -75,7 +75,7 @@ Toute opération sur les HSM ou sur les clés racines (génération, sauvegarde,
 
 ---
 
-## 6. Contrôles Techniques de Sécurité et Cycle de Vie des Clés
+## 6. Contrôles techniques de sécurité et cycle de vie des clés
 
 ### 6.1. Modules matériels de sécurité (HSM)
 - Les clés privées racines et intermédiaires sont générées et stockées exclusivement au sein de modules HSM certifiés **Common Criteria EAL 4+ (profil de protection EN 419 221-5)** ou **FIPS 140-2 / 140-3 Niveau 3**.
@@ -94,7 +94,7 @@ Conformément aux référentiels ETSI TS 119 312 et aux recommandations de l'ANS
 
 ---
 
-## 7. Profils de Certificats, de CRL et d'Horodatage
+## 7. Profils de certificats, de CRL et d'horodatage
 
 1. **Profils X.509 v3** : Conformes aux normes IETF RFC 5280 et profils ETSI EN 319 412 (parties 1 à 5).
 2. **Profils d'horodatage qualifié** : Conformes à la RFC 3161 et ETSI EN 319 421 / 422.
@@ -102,7 +102,7 @@ Conformément aux référentiels ETSI TS 119 312 et aux recommandations de l'ANS
 
 ---
 
-## 8. Audit de Conformité et Évaluation
+## 8. Audit de conformité et évaluation
 
 1. **Audits internes périodiques** : Réalisés sous la responsabilité de l'Auditeur Interne indépendant nommé en coordination avec le CPC.
 2. **Audits externes d'accréditation** : Conduits au moins tous les deux (2) ans (avec audits de surveillance annuels) par un organisme d'évaluation de la conformité (*Conformity Assessment Body - CAB*) accrédité selon la norme ISO/IEC 17065 et ETSI EN 319 403 / 403-1.
@@ -110,7 +110,7 @@ Conformément aux référentiels ETSI TS 119 312 et aux recommandations de l'ANS
 
 ---
 
-## 9. Dispositions Légales, Responsabilités et Droit Applicable
+## 9. Dispositions légales, responsabilités et droit applicable
 
 1. **Inaliénabilité des clés et séquestre** : Les clés privées sont insaisissables et sous séquestre technique exclusif (Article 8 ter des Statuts).
 2. **Garanties financières et RC Pro** : Couverture par le fonds de réserve opérationnelle (Article 12 bis des Statuts) et police d'assurance responsabilité civile professionnelle souscrite par l'association.

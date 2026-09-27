@@ -1,4 +1,4 @@
-# Guide des Démarches Administratives et Juridiques
+# Guide des démarches administratives et juridiques
 
 **Création et Immatriculation de l'Association « OTSPI » (Loi 1901)**  
 *« Open Trusted Service Provider Initiative »*
@@ -9,7 +9,7 @@ Ce document récapitule la procédure légale et administrative pour enregistrer
 
 ---
 
-## Étape 1 : Rédaction et Signature des Documents Constitutifs
+## Étape 1 : rédaction et signature des documents constitutifs
 
 Avant de procéder à la déclaration, réunir les documents suivants paraphés et signés :
 1. **Les Statuts** : [statuts-association.md](../statuts/statuts-association.md) complétés avec l'adresse du siège social dans la Métropole de Lyon, datés du jour de l'assemblée générale constitutive et signés par les dirigeants fondateurs (Président(e) et Trésorier(e)).
@@ -18,7 +18,7 @@ Avant de procéder à la déclaration, réunir les documents suivants paraphés 
 
 ---
 
-## Étape 2 : Déclaration en Préfecture (Télédéclaration e-création)
+## Étape 2 : déclaration en préfecture (télédéclaration e-création)
 
 La déclaration se réalise de manière dématérialisée sur le portail officiel de l'administration française :
 
@@ -34,7 +34,7 @@ La déclaration se réalise de manière dématérialisée sur le portail officie
 
 ---
 
-## Étape 3 : Récépissé de Déclaration et Numéro RNA
+## Étape 3 : récépissé de déclaration et numéro RNA
 
 - Dans un délai généralement compris entre **24 heures et 5 jours ouvrés**, la Préfecture du Rhône / Métropole de Lyon valide le dossier.
 - L'administration délivre un **Récépissé de Déclaration de Création**.
@@ -42,7 +42,7 @@ La déclaration se réalise de manière dématérialisée sur le portail officie
 
 ---
 
-## Étape 4 : Publication au Journal Officiel (JOAFE)
+## Étape 4 : publication au Journal officiel (JOAFE)
 
 - La publication au **Journal Officiel des Associations et Fondations d'Entreprise (JOAFE)** est automatique et gratuite.
 - La préfecture transmet directement l'avis de publication à la Direction de l'Information Légale et Administrative (DILA).
@@ -52,7 +52,7 @@ La déclaration se réalise de manière dématérialisée sur le portail officie
 
 ---
 
-## Étape 5 : Obtention des Numéros SIREN et SIRET (INSEE)
+## Étape 5 : obtention des numéros SIREN et SIRET (INSEE)
 
 Pour ouvrir un compte bancaire associatif, souscrire aux polices de garantie financière et d'assurance responsabilité civile professionnelle, employer du personnel ou recevoir des financements et mécénats, l'association doit disposer d'un numéro SIRET.
 
@@ -66,7 +66,7 @@ Pour ouvrir un compte bancaire associatif, souscrire aux polices de garantie fin
 
 ---
 
-## Étape 6 : Ouverture du Compte Bancaire et Fonds de Réserve
+## Étape 6 : ouverture du compte bancaire et fonds de réserve
 
 Une fois les identifiants officiels obtenus :
 - Ouverture du compte courant d'exploitation auprès d'un établissement bancaire ;

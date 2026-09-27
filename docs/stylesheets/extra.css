@@ -26,6 +26,11 @@
   --md-accent-fg-color: #0369a1;
   --md-accent-fg-color--transparent: rgba(3, 105, 161, 0.1);
   --md-typeset-a-color: #1d4ed8;
+  /* Gris de coloration syntaxique et texte secondaire des schémas : le gris clair de Material
+     (#0000008a) reste sous 4,5:1 sur le fond des blocs de code et des boîtes teintées */
+  --md-code-hl-generic-color: #4b5563;
+  --md-code-hl-comment-color: #4b5563;
+  --otspi-muted: #4b5563;
 }
 
 [data-md-color-scheme="slate"] {
@@ -37,6 +42,7 @@
 }
 
 [data-md-color-scheme="slate"] > * {
+  --otspi-muted: #b4bcc8;
   --md-accent-fg-color: #38bdf8;
   --md-accent-fg-color--transparent: rgba(56, 189, 248, 0.12);
 }
@@ -88,6 +94,12 @@
 .md-search__form {
   background-color: rgba(148, 163, 184, 0.14);
   border-radius: 8px;
+}
+
+/* Pied de page aux couleurs de l'en-tête */
+:root > * {
+  --md-footer-bg-color: #0b1120;
+  --md-footer-bg-color--dark: #070b16;
 }
 
 /* --------------------------------------------------------------------------
@@ -298,6 +310,49 @@
 /* Cartes de documentation : deux colonnes au plus, pas de carte orpheline */
 .md-typeset .grid.cards.otspi-docs {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+/* --------------------------------------------------------------------------
+   Page d'erreur 404 (overrides/404.html)
+   -------------------------------------------------------------------------- */
+.md-typeset .otspi-404 {
+  max-width: 34rem;
+  margin: 1rem 0 3rem;
+}
+
+.md-typeset .otspi-404__code {
+  margin: 0;
+  color: var(--otspi-primary);
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .otspi-404__code {
+  color: var(--otspi-sky);
+}
+
+.md-typeset .otspi-404 h1 {
+  margin: 0.6rem 0 0.8rem;
+}
+
+.md-typeset .otspi-404__en {
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .otspi-404__links {
+  margin-top: 1.4rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--otspi-card-border);
+  border-radius: 12px;
+  margin-left: 0;
+  background: var(--otspi-card-bg);
+  list-style: none;
+}
+
+.md-typeset .otspi-404__links li {
+  margin: 0.35em 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -553,7 +608,7 @@
 }
 
 .wp-svg .dg-glabel {
-  fill: var(--md-default-fg-color--light);
+  fill: var(--otspi-muted);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -585,7 +640,7 @@
 }
 
 .wp-svg .dg-s {
-  fill: var(--md-default-fg-color--light);
+  fill: var(--otspi-muted);
   font-size: 12px;
 }
 

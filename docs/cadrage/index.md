@@ -1,4 +1,4 @@
-# Documents de Cadrage Stratégique et Socle de Conformité Initial (TSP / PKI)
+# Documents de cadrage stratégique et socle de conformité initial (TSP / PKI)
 
 **Association « Open Trusted Service Provider Initiative » (OTSPI)**
 

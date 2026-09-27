@@ -1,4 +1,4 @@
-# Réunions et Comptes-Rendus Publics (*Public Accountability*)
+# Réunions et comptes-rendus publics (*Public Accountability*)
 
 **Association « Open Trusted Service Provider Initiative » (OTSPI)**
 
@@ -47,20 +47,20 @@ Avant toute publication publique d'un compte-rendu :
 - **Participants** : [Liste des membres avec respect de la vie privée RGPD]
 - **Quorum constaté** : [Pourcentage et conformité statutaire]
 
-### 1. Ordre du Jour
+### 1. Ordre du jour
 1. Point de situation opérationnelle et technique
 2. Examen de conformité réglementaire et audits
 3. Résolutions soumises au vote
 
-### 2. Synthèse des Débats
+### 2. Synthèse des débats
 [Résumé factuel et transparent des échanges]
 
-### 3. Décisions et Votes
+### 3. Décisions et votes
 - **Résolution 1** : [Description de la décision]
   - *Vote des titulaires* : Pour (X) / Contre (Y) / Abstention (Z)
   - *Faculté de refus des sympathisants* : Opposition exprimée (Oui/Non, suffrages)
   - *Résultat* : Adopté / Rejeté
 
-### 4. Prochaines Échéances
+### 4. Prochaines échéances
 - [Actions planifiées et responsables désignés]
 ```

@@ -1,3 +1,7 @@
+---
+pdf: otspi-reglement-interieur.pdf
+---
+
 # Règlement Intérieur de l'Association OTSPI
 ## « Open Trusted Service Provider Initiative »
 
@@ -9,6 +13,7 @@
 ## Préambule
 
 Le présent Règlement Intérieur opérationnalise les principes généraux fixés dans les Statuts de l'Association **« Open Trusted Service Provider Initiative » (OTSPI)**. Il définit les règles précises relatives :
+
 - À la qualification des membres, à la vérification d'identité civile et à la gestion des équipements cryptographiques matériels ;
 - Au cursus d'habilitation, au serment éthique et au régime des Officiers d'Autorité et des Gardiens de clés (*Key Custodians*) ;
 - À la ségrégation stricte des devoirs entre la direction opérationnelle (Bureau) et l'autorité normative (CPC / PMA) ;
@@ -21,6 +26,7 @@ Le présent Règlement Intérieur opérationnalise les principes généraux fix�
 
 ### Article 1 — Collèges et catégories de membres
 Conformément à l'Article 5 des Statuts, l'association comprend :
+
 1. **Membres sympathisants** : Personnes physiques ou morales soutenant les buts de l'association, à jour de cotisation. Ils disposent d'une voix consultative et exercent la faculté de refus collective prévue aux Articles 9 et 11 des Statuts.
 2. **Membres titulaires** : Personnes physiques ou personnes morales dûment représentées participant de manière substantielle et active à la gouvernance, à la conformité ou aux opérations critiques. Ils disposent d'une voix délibérative pleine et entière.
 3. **Membres bienfaiteurs** : Personnes morales apportant une contribution annuelle significative supérieure à cinq mille euros (5 000 € / an) sous forme de dons financiers, de mécénat matériel (serveurs, HSMs) ou de prise en charge locative. Ce statut honorifique n'ouvre aucun droit de vote (ni délibératif ni consultatif) afin de garantir la stricte neutralité et l'indépendance de l'infrastructure.
@@ -28,6 +34,7 @@ Conformément à l'Article 5 des Statuts, l'association comprend :
 
 ### Article 2 — Vérification formelle de l'identité civile des membres titulaires
 Conformément à l'Article 5 quater des Statuts, aucune voix délibérative ne peut être exercée sous statut pseudonyme ou anonyme :
+
 1. **Procédure de contrôle d'identité préalable** :
    - Tout candidat personne physique au statut titulaire (ou tout représentant physique désigné par une personne morale membre titulaire) doit présenter une pièce d'identité officielle en cours de validité (carte nationale d'identité, passeport ou titre de séjour émis par un État souverain).
    - La vérification est effectuée soit en présentiel par un membre du Bureau ou un Officier d'Autorité, soit par un moyen de vérification d'identité à distance conforme au référentiel d'exigences PVID (Prestataire de Vérification d'Identité à Distance) de l'ANSSI ou équivalent eIDAS de niveau substantiel ou élevé.
@@ -58,6 +65,7 @@ Conformément à l'Article 5 quater des Statuts, aucune voix délibérative ne p
 
 ### Article 5 — Cursus d'évaluation et habilitation des Officiers d'Autorité
 L'Officier d'Autorité exerce un rôle de confiance critique au sens des normes ETSI EN 319 401 et WebTrust.
+
 1. **Critères d'éligibilité** :
    - Être membre titulaire ou contributeur de l'association depuis au moins six (6) mois (sauf durant la phase d'amorçage de 24 mois visée à l'Article 5 bis.3 des Statuts) ;
    - Avoir une identité civile vérifiée et un casier judiciaire vierge (bulletin n°3 ou équivalent international de moins de 3 mois) ;
@@ -102,6 +110,7 @@ L'Officier d'Autorité exerce un rôle de confiance critique au sens des normes 
 
 ### Article 8 — Étanchéité de gouvernance et incompatibilités
 Conformément à l'Article 8 bis des Statuts :
+
 1. **Incompatibilité absolue** : Les fonctions de membre du Bureau (Président, Trésorier, Secrétaire Général) sont strictement incompatibles avec celles de membre du Comité des Politiques de Confiance (CPC) et avec celles d'Auditeur Interne indépendant.
 2. **Rôle des administrateurs du CA** : Les membres du Conseil d'Administration n'exerçant pas de fonction exécutive au Bureau peuvent siéger au CPC, sous réserve de s'abstenir lors de tout vote du Conseil d'Administration portant sur la ratification ou le contrôle des décisions du CPC.
 3. **Désignation du RSSI (CISO)** : Le RSSI est nommé par le CPC pour un mandat d'un (1) an renouvelable. Il rapporte techniquement au CPC et fonctionnellement au Bureau.
@@ -135,6 +144,7 @@ Conformément à l'Article 8 bis des Statuts :
 
 ### Article 11 — Plafonds d'engagement de dépenses autonomes du Bureau
 Afin de concilier réactivité opérationnelle et contrôle budgétaire de l'Assemblée et du Conseil d'Administration :
+
 1. **Dépenses courantes autonomes du Bureau** : Le Président et le Trésorier peuvent engager conjointement les dépenses d'exploitation courante (abonnements d'infrastructure d'hébergement, télécoms, petit matériel, frais de mission justifiés) dans la limite d'un plafond de **cinq mille euros (5 000 €) hors taxes par opération**, dans le cadre du budget annuel voté.
 2. **Autorisation préalable obligatoire du Conseil d'Administration** : Requiert une délibération préalable du Conseil d'Administration :
    - Tout investissement matériel unitaire ou contrat de prestation excédant **cinq mille euros (5 000 €) HT** ;

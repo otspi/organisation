@@ -1,10 +1,10 @@
-# Organisation Technique et Comité des Politiques de Confiance (CPC)
+# Organisation technique et Comité des politiques de confiance (CPC)
 
 **Association « Open Trusted Service Provider Initiative » (OTSPI)**
 
 ---
 
-## 1. Architecture de la Gouvernance Technique
+## 1. Architecture de la gouvernance technique
 
 La gouvernance technique de l'association repose sur une séparation stricte des rôles entre l'autorité normative cryptographique et les comités d'ingénierie logicielle et opérationnelle :
 
@@ -32,7 +32,7 @@ La gouvernance technique de l'association repose sur une séparation stricte des
 
 ---
 
-## 2. Le Comité des Politiques de Confiance (CPC / PMA)
+## 2. Le Comité des politiques de confiance (CPC / PMA)
 
 Conformément à l'**Article 8 bis des Statuts**, le CPC est l'organe collégial indépendant faisant office d'**Autorité de Gestion des Politiques (*Policy Management Authority - PMA*)** :
 - **Garantie d'indépendance** : Strictement dissocié de la direction exécutive (incompatibilité absolue avec le Bureau) ;
@@ -45,7 +45,7 @@ Conformément à l'**Article 8 bis des Statuts**, le CPC est l'organe collégial
 
 ---
 
-## 3. Le Comité de Pilotage Technique (TSC — Technical Steering Committee)
+## 3. Le Comité de pilotage technique (TSC — Technical Steering Committee)
 
 Le **TSC** rassemble les ingénieurs, mainteneurs de code et experts en systèmes distribués assurant le développement et l'exploitation quotidienne des briques logicielles libres :
 - **Ingénierie logicielle** : Développement des composants d'horodatage qualifié (TSA), PKI, protocoles d'émission et de validation (RFC 3161, ACME, REST/JSON, CMP, OCSP) ;
@@ -58,7 +58,7 @@ Le **TSC** rassemble les ingénieurs, mainteneurs de code et experts en système
 
 ---
 
-## 4. Politique de Sécurité et Signalement de Vulnérabilités
+## 4. Politique de sécurité et signalement de vulnérabilités
 
 La sécurité de l'infrastructure de confiance est assurée sous la coordination directe du RSSI et du CPC :
 - **Signalement confidentiel** :  
@@ -70,7 +70,7 @@ La sécurité de l'infrastructure de confiance est assurée sous la coordination
 
 ---
 
-## 5. Environnements et Qualification
+## 5. Environnements et qualification
 
 Les services opèrent sur deux environnements strictement cloisonnés :
 1. **Environnement Bac à Sable (Staging / Test)** :

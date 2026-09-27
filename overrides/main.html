@@ -2,23 +2,27 @@
 
 {% block extrahead %}
   {{ super() }}
-  {% if page and page.meta and page.meta.image %}
+  {#- Image de partage : celle de la page si elle en déclare une (livre blanc), sinon l'image par
+      défaut du portail (scripts/build_og_image.py) -#}
+  {% if page and page.meta is defined %}
     {% set og_title = page.meta.title or page.title %}
     {% set og_desc = page.meta.description or config.site_description %}
-    <meta property="og:type" content="article">
+    {% set og_image = page.meta.image or (config.site_url ~ "assets/og/og-portail.png") %}
+    {% set og_image_alt = page.meta.image_alt or "OTSPI, Open Trusted Service Provider Initiative : portail de l'association" %}
+    <meta property="og:type" content="{{ 'website' if page.is_homepage else 'article' }}">
     <meta property="og:site_name" content="OTSPI">
     <meta property="og:title" content="{{ og_title }}">
     <meta property="og:description" content="{{ og_desc }}">
     <meta property="og:url" content="{{ page.canonical_url }}">
     <meta property="og:locale" content="{{ 'en_GB' if page.meta.lang == 'en' else 'fr_FR' }}">
-    <meta property="og:image" content="{{ page.meta.image }}">
+    <meta property="og:image" content="{{ og_image }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="{{ page.meta.image_alt }}">
+    <meta property="og:image:alt" content="{{ og_image_alt }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ og_title }}">
     <meta name="twitter:description" content="{{ og_desc }}">
-    <meta name="twitter:image" content="{{ page.meta.image }}">
+    <meta name="twitter:image" content="{{ og_image }}">
   {% endif %}
 {% endblock %}
 

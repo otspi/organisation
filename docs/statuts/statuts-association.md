@@ -2,6 +2,7 @@
 title: "STATUTS DE L'ASSOCIATION OTSPI"
 author: "Membres Fondateurs"
 date: "Projet — non encore adopté"
+pdf: otspi-projet-de-statuts.pdf
 ---
 
 # STATUTS DE L'ASSOCIATION
@@ -26,6 +27,7 @@ L’association est régie par les principes d'une **gestion désintéressée** 
 L’association a pour vocation de promouvoir, concevoir, opérer et pérenniser des infrastructures critiques de confiance numérique ouvertes, souveraines, transparentes et universellement accessibles.
 
 À ce titre, l’association a notamment pour missions, directes ou indirectes, en France et à l'international :
+
 1. **L'opération et la fourniture de services de confiance :** concevoir, déployer, opérer et maintenir des infrastructures et services de confiance numérique (notamment la gestion des identités, les infrastructures à clés publiques, l'émission de certificats, l'horodatage électronique qualifié, le scellement, la signature numérique, l'archivage probatoire et la préservation ou validation de preuves cryptographiques) ;
 2. **L'obtention et le maintien d'accréditations, de qualifications et de certifications :** instruire et pérenniser toute démarche d'évaluation, d'audit technique ou de qualification auprès des autorités publiques compétentes, des organismes de normalisation, des consortiums de l'industrie et des programmes de confiance des éditeurs de plateformes ;
 3. **La conception et la diffusion de technologies ouvertes :** concevoir, maintenir et publier sous licences libres ou ouvertes des spécifications, protocoles, briques logicielles et architectures matérielles vérifiables concourant à la transparence des chaînes de confiance ;
@@ -49,6 +51,7 @@ La durée de l'association est illimitée.
 
 #### Article 5 — Catégories de membres
 L'association se compose de :
+
 * **Membres sympathisants :** personnes physiques ou morales adhérant aux buts de l'association, à jour de leur cotisation annuelle. Ils participent aux travaux et aux Assemblées Générales avec voix consultative, et disposent de la faculté de refus collective prévue aux présents statuts ;
 * **Membres titulaires :** personnes physiques ou personnes morales dûment représentées, participant de façon substantielle et active à la gouvernance, à la conformité ou aux opérations critiques de l'association. Ils disposent d'une voix délibérative pleine et entière sur l'ensemble des scrutins ;
 * **Membres bienfaiteurs :** personnes morales apportant un soutien financier, matériel ou de mise à disposition de locaux/infrastructures significatif (défini par le Règlement Intérieur, supérieur à 5 000 € par an). Cette qualité honorifique n'ouvre aucun droit de vote au sein des Assemblées Générales, préservant l'indépendance de l'association ;
@@ -91,6 +94,7 @@ Les fondateurs initiaux, signataires des statuts constitutifs, disposent de plei
 
 #### Article 6 — Perte de la qualité de membre
 La qualité de membre de l'association se perd par :
+
 1. **La démission :** adressée par écrit au Conseil d'Administration, prenant effet à sa réception ;
 2. **Le non-paiement de la cotisation :**  
    * **Régime de droit commun :** Le défaut de paiement de la cotisation annuelle à l'échéance fixée par le Règlement Intérieur, demeuré infructueux trente (30) jours calendaires après mise en demeure par voie électronique, entraîne la **radiation automatique d'office** de l'association. Pour un membre titulaire n'exerçant aucun mandat statutaire ni rôle de confiance actif, le défaut de régularisation emporte la perte immédiate de la qualité de membre titulaire et de ses droits de vote délibératifs.  
@@ -172,6 +176,7 @@ L’Assemblée Générale comprend tous les membres de l'association. Elle se r�
 
 #### Article 10 — Domaine réservé de l'Assemblée Générale
 Relèvent de la compétence exclusive de l'Assemblée Générale, sans délégation possible :
+
 1. L’élection et la révocation des administrateurs, ainsi que la fixation du nombre de sièges ;
 2. L’approbation annuelle des comptes financiers, l'affectation du résultat et le vote du budget prévisionnel ;
 3. L’autorisation préalable de tout emprunt ou engagement financier pluriannuel excédant les seuils fixés par le Règlement Intérieur ;
@@ -185,6 +190,7 @@ Relèvent de la compétence exclusive de l'Assemblée Générale, sans délégat
 
 #### Article 11 — Assemblée Générale Extraordinaire (Régime ordinaire)
 L'Assemblée Générale Extraordinaire est seule compétente pour modifier les présents statuts ou prononcer la dissolution de l'association, sous réserve des dispositions intangibles prévues aux Articles 8 ter et 13.
+
 1. **Quorum :** Participation d'au moins **soixante-quinze pour cent (75 %)** des membres titulaires.
 2. **Unanimité des votants :** Aucune modification ne peut être adoptée sans recueillir le vote favorable de **cent pour cent (100 %) des membres titulaires participant au scrutin**.
 3. **Contrôle global :** Même approuvée à l'unanimité des titulaires votants, la révision est rejetée si la majorité simple des suffrages exprimés par l'ensemble des membres (titulaires et sympathisants réunis prenant part au scrutin) émet un vote d'opposition.
@@ -207,6 +213,7 @@ L'Assemblée Générale Extraordinaire est seule compétente pour modifier les p
 
 #### Article 11 ter — Régime de la Reconnaissance d'Utilité Publique (RUP)
 Dans l'hypothèse où l'association viendrait à être reconnue d'utilité publique par décret en Conseil d'État :
+
 * Les clauses et règles de tutelle prévues par les statuts types approuvés par le Conseil d'État se substituent de plein droit aux stipulations des Articles 11 et 11 bis pour les révisions statutaires ;
 * Le contrôle de légalité, l'approbation préalable par décret ministériel et l'avis conforme du Conseil d'État constituent dès lors le garant institutionnel de l'inaliénabilité des missions d'intérêt général de l'association.
 
@@ -250,6 +257,7 @@ Par dérogation légale impérative, l'association applique les restrictions tec
 
 #### Article 13 bis — Continuité d’infrastructure et association successeur
 Par dérogation aux règles ordinaires de liquidation, l’Assemblée Générale Extraordinaire statuant selon les règles de l'Article 11 peut décider du transfert de tout ou partie des infrastructures, dépôts logiciels, marques et qualifications vers une nouvelle personne morale sans but lucratif (*association successeur*), à la condition expresse et préalable que celle-ci :
+
 * Soit constituée sous forme non lucrative (loi 1901 ou équivalent européen) ;
 * Reprenne textuellement dans ses statuts les mêmes clauses d'inaliénabilité, d'interdiction de transformation lucrative et d'engagement envers les licences libres ;
 * S'engage formellement à assurer la continuité intégrale des obligations souscrites auprès des autorités de contrôle et des programmes de confiance internationaux.

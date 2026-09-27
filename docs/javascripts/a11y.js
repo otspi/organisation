@@ -19,3 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Rend accessibles au clavier les blocs de code qui défilent horizontalement (règle axe
+// scrollable-region-focusable) : ils deviennent focalisables et portent le nom « Code ».
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("pre > code").forEach(function (code) {
+    if (code.scrollWidth > code.clientWidth && !code.hasAttribute("tabindex")) {
+      code.setAttribute("tabindex", "0");
+      code.setAttribute("role", "region");
+      code.setAttribute("aria-label", "Code");
+    }
+  });
+});

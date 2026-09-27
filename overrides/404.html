@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+
+{#- Page d'erreur servie pour les 404 et les 403 (deploy/o2switch/htaccess) : bilingue, puisque
+    le visiteur peut venir de la version anglaise du livre blanc. -#}
+
+{% block content %}
+  <div class="otspi-404">
+    <p class="otspi-404__code" aria-hidden="true">404</p>
+    <h1>Page introuvable</h1>
+    <p>La page demandée n'existe pas ou a été déplacée. Les documents de l'association restent accessibles depuis les rubriques ci-dessous ou par la recherche.</p>
+    <p lang="en" class="otspi-404__en">Page not found. The requested page does not exist or has moved.</p>
+    <ul class="otspi-404__links">
+      <li><a href="{{ '' | url }}">Accueil du portail</a></li>
+      <li><a href="{{ 'livre-blanc/' | url }}">Livre blanc</a> · <a href="{{ 'white-paper/' | url }}" lang="en">White paper</a></li>
+      <li><a href="{{ 'statuts/statuts-association/' | url }}">Projet de statuts</a></li>
+      <li><a href="{{ 'cadrage/' | url }}">Socle technique et audit</a></li>
+      <li><a href="{{ 'reunions/' | url }}">Transparence et comptes-rendus</a></li>
+    </ul>
+  </div>
+{% endblock %}

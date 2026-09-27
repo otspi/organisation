@@ -59,7 +59,7 @@ theme:
     - content.action.view
 
 extra_javascript:
-  - javascripts/a11y.js
+  - javascripts/a11y.js?v=2
   - javascripts/analytics.js?v=2
 
 extra_css:

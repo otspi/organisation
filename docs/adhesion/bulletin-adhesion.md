@@ -11,7 +11,7 @@ Les demandes d'adhésion et dossiers complétés sont à transmettre à l'adress
 
 ---
 
-## 1. Collèges et Conditions d'Adhésion
+## 1. Collèges et conditions d'adhésion
 
 Conformément aux Articles 5, 5 bis et 5 quater des Statuts :
 
@@ -34,10 +34,10 @@ Conformément aux Articles 5, 5 bis et 5 quater des Statuts :
 
 ---
 
-## 2. Formulaire pour Personne Physique
+## 2. Formulaire pour personne physique
 
 ```markdown
-### Demande d'adhésion — Personne Physique
+### Demande d'adhésion — personne physique
 
 - **Nom légal** : 
 - **Prénom(s)** : 
@@ -75,10 +75,10 @@ Signature :
 
 ---
 
-## 3. Formulaire pour Personne Morale
+## 3. Formulaire pour personne morale
 
 ```markdown
-### Demande d'adhésion — Personne Morale
+### Demande d'adhésion — personne morale
 
 - **Raison sociale de l'organisation** : 
 - **Forme juridique** (ex. Association, Fondation, SA, SAS, Établissement Public) : 

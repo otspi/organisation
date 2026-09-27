@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: EUPL-1.2
-# Valide au format PDF/UA-1 les PDF du livre blanc générés dans ./site avec veraPDF.
+# Valide au format PDF/UA-1 les PDF du portail générés dans ./site avec veraPDF.
 # Retourne un code d'erreur si un PDF n'est pas conforme.
 #
 # veraPDF (licence GPLv3 et MPL 2.0) est téléchargé en version épinglée, vérifié par empreinte SHA-256,
@@ -38,7 +38,10 @@ fi
 if [ "$#" -gt 0 ]; then
   files=("$@")
 else
-  files=(site/livre-blanc/otspi-livre-blanc.pdf site/white-paper/otspi-white-paper.pdf)
+  files=(site/livre-blanc/otspi-livre-blanc.pdf site/white-paper/otspi-white-paper.pdf
+         site/statuts/statuts-association/otspi-projet-de-statuts.pdf
+         site/reglement-interieur/reglement-interieur/otspi-reglement-interieur.pdf
+         site/gouvernance/charte-ethique/otspi-charte-ethique.pdf)
 fi
 
 status=0
