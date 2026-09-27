@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: EUPL-1.2
-"""Génère les deux schémas du livre blanc (hiérarchie qualifiée, hiérarchies TLS) en SVG intégré,
-en français et en anglais, et les insère entre les marqueurs des pages du livre blanc.
+"""Génère les schémas du portail en SVG intégré et les insère entre les marqueurs des pages :
+les deux schémas du livre blanc (hiérarchie qualifiée, hiérarchies TLS), en français et en anglais,
+et l'organigramme de gouvernance de la page d'accueil.
 
 Les schémas n'utilisent aucun script : ils remplacent des blocs Mermaid, dont la bibliothèque
 (environ 950 Ko, chargée depuis un service tiers) ralentissait fortement la page.
@@ -112,6 +113,58 @@ def tls(t, uid):
     return "".join(parts)
 
 
+GOVERNANCE = {
+    "title": "Organisation de la gouvernance d'OTSPI",
+    "desc": "L'assemblée générale élit le conseil d'administration, qui désigne le bureau (direction opérationnelle) ; "
+            "le bureau assure les relations avec les autorités de contrôle et les auditeurs. L'assemblée générale confirme "
+            "aussi les nominations au comité des politiques de confiance (CPC), autorité normative indépendante du bureau, "
+            "qui désigne le RSSI pour un an, habilite et contrôle les officiers d'autorité et rend un avis conforme sur les "
+            "travaux du comité technique ; le bureau fournit à ce comité ses moyens.",
+    "ag": ("Assemblée générale", "titulaires et sympathisants"),
+    "ca": ("Conseil d'administration", "2 à 9 membres"),
+    "bureau": ("Bureau", "présidence · trésorerie · secrétariat"),
+    "cab": ("Autorités de contrôle", "et auditeurs (CAB)"),
+    "cpc": ("Comité des politiques de confiance", "CPC / PMA"),
+    "tsc": ("Comité technique (TSC)", "avis CPC · moyens du Bureau"),
+    "rssi": ("RSSI / CISO", "désigné par le CPC, 1 an"),
+    "oa": ("Officiers d'autorité", "et gardiens de clés"),
+    "left": "Direction opérationnelle",
+    "right": "Autorité normative indépendante",
+    "confirm": "confirmation des nominations",
+}
+
+
+def governance(t, uid):
+    parts = [
+        f'<svg class="wp-svg wp-svg--wide" viewBox="0 0 940 490" role="img" aria-labelledby="{uid}-t {uid}-d" xmlns="http://www.w3.org/2000/svg">',
+        f'<title id="{uid}-t">{escape(t["title"])}</title><desc id="{uid}-d">{escape(t["desc"])}</desc>',
+        defs(uid),
+        '<rect class="dg-group" x="10" y="196" width="300" height="284" rx="10"/>',
+        f'<text class="dg-glabel" x="26" y="466">{escape(t["left"].upper())}</text>',
+        '<rect class="dg-group" x="330" y="196" width="600" height="284" rx="10"/>',
+        f'<text class="dg-glabel" x="346" y="466">{escape(t["right"].upper())}</text>',
+        f'<path class="dg-edge" d="M330 42 C220 42 160 56 160 108" marker-end="url(#arr-{uid})"/>',
+        f'<path class="dg-cross" d="M570 42 C650 42 630 150 630 228" marker-end="url(#arc-{uid})"/>',
+        f'<text class="dg-label" x="646" y="140">{escape(t["confirm"])}</text>',
+        f'<path class="dg-edge" d="M160 174 L160 228" marker-end="url(#arr-{uid})"/>',
+        f'<path class="dg-edge" d="M160 294 L160 364" marker-end="url(#arr-{uid})"/>',
+        f'<path class="dg-edge" d="M290 262 C360 262 410 318 420 364" marker-end="url(#arr-{uid})"/>',
+        f'<path class="dg-edge" d="M630 294 C630 330 435 330 435 364" marker-end="url(#arr-{uid})"/>',
+        f'<path class="dg-edge" d="M630 294 L631 364" marker-end="url(#arr-{uid})"/>',
+        f'<path class="dg-edge" d="M630 294 C630 330 827 330 827 364" marker-end="url(#arr-{uid})"/>',
+        box(330, 10, 240, 64, t["ag"], "dg-root"),
+        box(40, 110, 240, 64, t["ca"], "dg-box"),
+        box(30, 230, 260, 64, t["bureau"], "dg-box"),
+        box(30, 366, 260, 64, t["cab"], "dg-box"),
+        box(500, 230, 260, 64, t["cpc"], "dg-root"),
+        box(342, 366, 186, 64, t["tsc"], "dg-box"),
+        box(538, 366, 186, 64, t["rssi"], "dg-box"),
+        box(734, 366, 186, 64, t["oa"], "dg-box"),
+        '</svg>',
+    ]
+    return "".join(parts)
+
+
 def figure(svg, number, title):
     """Enveloppe un schéma dans une figure légendée et numérotée, ancrée sur #figure-N pour les renvois."""
     return (f'<figure class="wp-diagram" id="figure-{number}" markdown="0">\n{svg}\n'
@@ -132,6 +185,12 @@ def main():
         text = replace_block(text, "tls", figure(tls(TEXT[lang], f"{lang}-t"), 2, TEXT[lang]["t_title"]))
         page.write_text(text, encoding="utf-8")
         print(f"{path} : schémas régénérés")
+
+    home = ROOT / "docs/index.md"
+    text = replace_block(home.read_text(encoding="utf-8"), "governance",
+                         f'<figure class="wp-diagram" markdown="0">\n{governance(GOVERNANCE, "home-g")}\n</figure>')
+    home.write_text(text, encoding="utf-8")
+    print("docs/index.md : organigramme régénéré")
 
 
 if __name__ == "__main__":

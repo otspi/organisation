@@ -16,20 +16,21 @@ theme:
   name: material
   custom_dir: overrides
   language: fr
+  # Couleurs de la charte OTSPI (bleu nuit du logo) : voir docs/stylesheets/extra.css
   palette:
     # Mode clair
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Passer au mode sombre
     # Mode sombre
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Passer au mode clair
@@ -100,6 +101,8 @@ markdown_extensions:
       permalink: true
 
 extra:
+  # Pas de mention « Made with Material for MkDocs » en pied de page
+  generator: false
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/otspi/organisation
@@ -113,30 +116,30 @@ extra:
 
 nav:
   - Accueil: index.md
-  - Livre Blanc:
+  - Livre blanc:
       - Livre blanc (FR): livre-blanc/index.md
       - White Paper (EN): white-paper/index.md
       - Historique des versions: livre-blanc/historique.md
-  - Statuts & Gouvernance:
+  - Statuts et gouvernance:
       - Projet de statuts: statuts/statuts-association.md
-      - Charte d'Éthique: gouvernance/charte-ethique.md
-      - Organisation Technique & CPC: gouvernance/comite-technique.md
-  - Règlement Intérieur:
-      - Règlement Intérieur: reglement-interieur/reglement-interieur.md
-  - Démarches Administratives:
-      - Procès-Verbal Constitutif (Modèle): administratif/pv-ag-constitutive-modele.md
-      - Demande de Rescrit Fiscal DGFIP: administratif/rescrit-fiscal-mecenat.md
+      - Charte d'éthique: gouvernance/charte-ethique.md
+      - Organisation technique et CPC: gouvernance/comite-technique.md
+  - Règlement intérieur:
+      - Règlement intérieur: reglement-interieur/reglement-interieur.md
+  - Démarches administratives:
+      - Procès-verbal constitutif (modèle): administratif/pv-ag-constitutive-modele.md
+      - Demande de rescrit fiscal DGFIP: administratif/rescrit-fiscal-mecenat.md
       - Dossier de constitution: administratif/dossier-constitution.md
       - Résolution d'amorçage (CPC et Bureau): administratif/resolution-transitoire.md
-      - Guide Démarches Préfecture (RNA, SIRET): administratif/declaration-prefecture.md
-  - Socle Technique & Audit (TSP / PKI):
+      - Démarches en préfecture (RNA, SIRET): administratif/declaration-prefecture.md
+  - Socle technique et audit (TSP / PKI):
       - Vue d'ensemble: cadrage/index.md
       - Cadre CP/CPS (RFC 3647): cadrage/cp-cps-cadre.md
-      - Politique de Sécurité des SI (PSSI): cadrage/pssi.md
-      - Plan de Fin d'Activité (Termination Plan): cadrage/termination-plan.md
+      - Politique de sécurité des SI (PSSI): cadrage/pssi.md
+      - Plan de fin d'activité (Termination Plan): cadrage/termination-plan.md
       - Arc d'OID et numéro IANA: cadrage/oid-arc.md
       - Demandes de devis (audit, HSM, hébergement): cadrage/demandes-de-devis.md
   - Transparence:
       - Hébergements: reunions/hebergements.md
       - Hosting transparency (EN): reunions/hosting.md
-      - Registre des Réunions & PV: reunions/index.md
+      - Registre des réunions et PV: reunions/index.md

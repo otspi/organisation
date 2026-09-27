@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+
+{#- Page d'accueil : bandeau pleine largeur sous l'en-tête, puis le contenu de docs/index.md
+    sans le titre automatique ni les boutons d'édition. -#}
+
+{% block hero %}
+  <section class="otspi-hero" aria-labelledby="otspi-hero-title">
+    <div class="otspi-hero__inner md-grid">
+      <div class="otspi-hero__text">
+        <p class="otspi-hero__kicker">Association d'intérêt général (loi 1901) en cours de constitution</p>
+        <h1 id="otspi-hero-title" class="otspi-hero__title">Open Trusted Service Provider Initiative</h1>
+        <p class="otspi-hero__lead">
+          Construire, opérer et pérenniser des infrastructures de confiance numérique
+          <strong>ouvertes, souveraines et universellement accessibles</strong>, conformes aux standards
+          eIDAS 2.0, ETSI et WebTrust, sous une gouvernance strictement désintéressée.
+        </p>
+        <div class="otspi-hero__actions">
+          <a class="md-button md-button--primary" href="{{ 'livre-blanc/' | url }}">Lire le livre blanc</a>
+          <a class="md-button" href="{{ 'statuts/statuts-association/' | url }}">Projet de statuts</a>
+          <a class="md-button" href="https://www.otspi.org/manifeste.html">Signer le manifeste</a>
+        </div>
+      </div>
+      <img class="otspi-hero__logo" src="{{ 'assets/logo-vertical-dark.svg' | url }}" alt="" width="220" height="220">
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+  {{ page.content }}
+{% endblock %}
