@@ -1,5 +1,12 @@
 ---
 pdf: otspi-reglement-interieur.pdf
+template: legal.html
+hide:
+  - navigation
+legal:
+  kicker: Règlement intérieur
+  status: Projet
+  titles: 2
 ---
 
 # Règlement Intérieur de l'Association OTSPI

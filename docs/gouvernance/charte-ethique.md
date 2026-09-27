@@ -1,5 +1,11 @@
 ---
 pdf: otspi-charte-ethique.pdf
+template: legal.html
+hide:
+  - navigation
+legal:
+  kicker: Charte
+  titles: 2
 ---
 
 # Charte d'éthique, de déontologie et de transparence publique
