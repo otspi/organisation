@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+
+{#- Présentation « document juridique » (statuts, règlement intérieur, charte), réglée par la
+    métadonnée `legal` de la page, sans toucher au texte :
+      legal:
+        kicker: Projet de statuts          # nature du document
+        status: Projet, non adopté         # pastille de statut (facultative)
+        history: statuts/historique/       # page d'historique, depuis la racine du site (facultative)
+        titles: 3                          # niveau de titre des grandes parties (TITRE I…)
+    L'en-tête du document (nature, statut, boutons) s'insère après le titre et son sous-titre. -#}
+
+{% block content %}
+  {% set legal = page.meta.legal %}
+  {% set head, rest = page.content.split("</h1>", 1) %}
+  {% set head = head ~ "</h1>" %}
+  {% if rest.lstrip().startswith("<h2") %}
+    {% set subtitle, rest = rest.split("</h2>", 1) %}
+    {% set head = head ~ subtitle ~ "</h2>" %}
+  {% endif %}
+  <div class="otspi-legal otspi-legal--t{{ legal.titles }}">
+    <p class="otspi-legal__kicker">
+      {{ legal.kicker }}
+      {% if legal.status %}<span class="otspi-legal__status">{{ legal.status }}</span>{% endif %}
+    </p>
+    {{ head }}
+    <div class="otspi-legal__actions wp-download">
+      {% if page.meta.pdf %}
+        <a class="md-button md-button--primary" href="{{ page.meta.pdf }}" download>Télécharger le PDF</a>
+      {% endif %}
+      {% if legal.history %}
+        <a class="md-button" href="{{ legal.history | url }}">Historique des versions</a>
+      {% endif %}
+      {% if page.edit_url %}
+        <a class="md-button" href="{{ page.edit_url }}">Proposer une modification</a>
+      {% endif %}
+    </div>
+    {{ rest }}
+  </div>
+{% endblock %}

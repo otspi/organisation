@@ -123,6 +123,11 @@
     padding: 0 !important;
   }
 
+  /* En-tête des textes juridiques à l'écran (overrides/legal.html) : la page de garde le remplace */
+  .otspi-legal__kicker {
+    display: none !important;
+  }
+
   /* Espaceur de Material en tête d'article : il décalerait la page de garde à fond perdu */
   .md-content__inner::before {
     display: none !important;

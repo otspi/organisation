@@ -416,6 +416,131 @@
 }
 
 /* --------------------------------------------------------------------------
+   Textes juridiques (overrides/legal.html) : présentation de document,
+   une colonne de lecture, grandes parties et articles bien marqués.
+   À l'écran seulement : les PDF gardent la mise en page de print.css
+   -------------------------------------------------------------------------- */
+@media screen {
+  .md-typeset .otspi-legal {
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: 0.84rem;
+    line-height: 1.75;
+  }
+
+  .md-typeset .otspi-legal__kicker {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 0.8rem;
+    color: var(--otspi-primary);
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .md-typeset .otspi-legal__status {
+    padding: 0.15em 0.7em;
+    border: 1px solid #f59e0b;
+    border-radius: 999px;
+    background: #fffbeb;
+    color: #92400e;
+    letter-spacing: 0.04em;
+    text-transform: none;
+  }
+
+  [data-md-color-scheme="slate"] .md-typeset .otspi-legal__kicker {
+    color: var(--otspi-sky);
+  }
+
+  [data-md-color-scheme="slate"] .md-typeset .otspi-legal__status {
+    border-color: #b45309;
+    background: rgba(245, 158, 11, 0.12);
+    color: #fcd34d;
+  }
+
+  .md-typeset .otspi-legal h1 {
+    margin: 0;
+    font-size: 1.7rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* Sous-titre (nom de l'association) */
+  .md-typeset .otspi-legal h1 + h2 {
+    margin: 0.4rem 0 0;
+    padding: 0;
+    border: 0;
+    color: var(--md-default-fg-color--light);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .md-typeset .otspi-legal__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1.4rem 0 1.8rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  }
+
+  .md-typeset .otspi-legal__actions .md-button {
+    margin: 0;
+    font-size: 0.68rem;
+  }
+
+  /* Grandes parties (TITRE I…, sections de la charte) */
+  .md-typeset .otspi-legal--t3 h3,
+  .md-typeset .otspi-legal--t2 h1 ~ h2:not(h1 + h2) {
+    margin: 3rem 0 1.2rem;
+    padding: 1rem 0 0;
+    border-top: 2px solid var(--otspi-primary);
+    color: var(--otspi-primary);
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+  }
+
+  [data-md-color-scheme="slate"] .md-typeset .otspi-legal--t3 h3,
+  [data-md-color-scheme="slate"] .md-typeset .otspi-legal--t2 h1 ~ h2:not(h1 + h2) {
+    border-top-color: var(--otspi-sky);
+    color: var(--otspi-sky);
+  }
+
+  /* Articles */
+  .md-typeset .otspi-legal--t3 h4,
+  .md-typeset .otspi-legal--t2 h3 {
+    margin: 2rem 0 0.7rem;
+    padding-left: 0.7rem;
+    border-left: 3px solid var(--otspi-gold);
+    color: var(--md-default-fg-color);
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  .md-typeset .otspi-legal hr {
+    display: none;
+  }
+
+  /* Table des matières réduite aux grandes parties */
+  .md-main:has(.otspi-legal--t3) .md-nav--secondary > .md-nav__list > .md-nav__item > .md-nav > .md-nav__list > .md-nav__item > .md-nav,
+  .md-main:has(.otspi-legal--t2) .md-nav--secondary > .md-nav__list > .md-nav__item > .md-nav {
+    display: none;
+  }
+
+  .md-main:has(.otspi-legal) .md-nav--secondary .md-nav__link {
+    margin-top: 0.5em;
+    line-height: 1.35;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Page d'erreur 404 (overrides/404.html)
    -------------------------------------------------------------------------- */
 .md-typeset .otspi-404 {

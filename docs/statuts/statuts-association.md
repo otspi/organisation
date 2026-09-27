@@ -3,6 +3,14 @@ title: "STATUTS DE L'ASSOCIATION OTSPI"
 author: "Membres Fondateurs"
 date: "Projet — non encore adopté"
 pdf: otspi-projet-de-statuts.pdf
+template: legal.html
+hide:
+  - navigation
+legal:
+  kicker: Projet de statuts
+  status: Projet, non adopté
+  history: statuts/historique/
+  titles: 3
 ---
 
 # STATUTS DE L'ASSOCIATION
