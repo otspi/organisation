@@ -1,0 +1,48 @@
+name: Release (PDF et brouillon Zenodo)
+
+# À la publication d'une release GitHub (étiquette vX.Y, numéro de version du livre blanc) :
+# - reconstruit et contrôle le portail à cette étiquette, puis joint à la release les cinq PDF
+#   (livre blanc FR et EN, projet de statuts, règlement intérieur, charte d'éthique) ;
+# - si le secret ZENODO_TOKEN existe, dépose le livre blanc sur Zenodo en brouillon
+#   (scripts/zenodo_draft.py) : le DOI n'est attribué qu'à la publication manuelle depuis Zenodo.
+# Ne pas activer en plus l'intégration GitHub de Zenodo, qui créerait un second dépôt par release.
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+          persist-credentials: false
+
+      - name: Build and check the portal
+        uses: ./.github/actions/build-portal
+
+      - name: Attach PDF to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$TAG" $(find site -name 'otspi-*.pdf' | sort) --clobber --repo "$GITHUB_REPOSITORY"
+
+      - name: Zenodo draft (white paper)
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          ZENODO_URL: ${{ vars.ZENODO_URL }}
+          ZENODO_DEPOSITION_ID: ${{ vars.ZENODO_DEPOSITION_ID }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          if [ -z "$ZENODO_TOKEN" ]; then
+            echo "Secret ZENODO_TOKEN absent : pas de dépôt Zenodo." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          python scripts/zenodo_draft.py --version "${TAG#v}" \
+            site/livre-blanc/otspi-livre-blanc.pdf site/white-paper/otspi-white-paper.pdf

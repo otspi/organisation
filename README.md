@@ -94,6 +94,7 @@ mkdocs build --strict         # échoue sur tout lien ou ancre interne cassé
 | `check_a11y.js` | Accessibilité WCAG 2 AA (pa11y, moteur axe) de toutes les pages du site construit | Node.js, `npm install --no-save pa11y@9`, Chrome |
 | `build_diagrams.py` | Régénère les schémas SVG du livre blanc et l'organigramme de l'accueil | — |
 | `build_og_image.py` | Régénère l'image de partage par défaut (`docs/assets/og/og-portail.png`) | Chrome |
+| `zenodo_draft.py` | Brouillon Zenodo du livre blanc à la publication d'une release (`release.yml`) ; le DOI n'est attribué qu'à la publication manuelle sur Zenodo | secret `ZENODO_TOKEN` |
 | `count_qtsp.py` | Décompte des QTSP des listes de confiance de l'EEE (`data/qtsp-count.json`) | — |
 | `check_links.py` | Liens externes cassés (contrôle mensuel) | — |
 | `check_sites.sh` | Codes HTTP, redirections et certificats des sites OTSPI (contrôle quotidien) | curl, openssl |
