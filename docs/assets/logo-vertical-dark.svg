@@ -25,10 +25,10 @@
         stroke-width="14.40"
         stroke-linecap="round"
         stroke-linejoin="round" />
-  <text x="150" y="226" text-anchor="middle" font-family="'Ubuntu Sans', 'Liberation Sans', system-ui, -apple-system, sans-serif" font-size="42" font-weight="800" letter-spacing="-0.5">
+  <text x="150" y="226" text-anchor="middle" font-family="'Ubuntu Sans', 'Liberation Sans', Inter, system-ui, -apple-system, sans-serif" font-size="42" font-weight="800" letter-spacing="-0.5">
     <tspan fill="#38BDF8">O</tspan><tspan fill="#F8FAFC">TSPI</tspan>
   </text>
-  <text x="150" y="252" text-anchor="middle" font-family="'Ubuntu Sans', 'Liberation Sans', system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="#94A3B8" letter-spacing="1.8">
+  <text x="150" y="252" text-anchor="middle" font-family="'Ubuntu Sans', 'Liberation Sans', Inter, system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="#94A3B8" letter-spacing="1.8">
     OPEN TRUSTED SERVICE PROVIDER INITIATIVE
   </text>
 </svg>
