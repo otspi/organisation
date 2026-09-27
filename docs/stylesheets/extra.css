@@ -90,6 +90,12 @@
   border-radius: 8px;
 }
 
+/* Pied de page aux couleurs de l'en-tête */
+:root > * {
+  --md-footer-bg-color: #0b1120;
+  --md-footer-bg-color--dark: #070b16;
+}
+
 /* --------------------------------------------------------------------------
    Titres : hiérarchie nette, sans le gris clair et la graisse légère de Material
    -------------------------------------------------------------------------- */
@@ -298,6 +304,49 @@
 /* Cartes de documentation : deux colonnes au plus, pas de carte orpheline */
 .md-typeset .grid.cards.otspi-docs {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+/* --------------------------------------------------------------------------
+   Page d'erreur 404 (overrides/404.html)
+   -------------------------------------------------------------------------- */
+.md-typeset .otspi-404 {
+  max-width: 34rem;
+  margin: 1rem 0 3rem;
+}
+
+.md-typeset .otspi-404__code {
+  margin: 0;
+  color: var(--otspi-primary);
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .otspi-404__code {
+  color: var(--otspi-sky);
+}
+
+.md-typeset .otspi-404 h1 {
+  margin: 0.6rem 0 0.8rem;
+}
+
+.md-typeset .otspi-404__en {
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .otspi-404__links {
+  margin-top: 1.4rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--otspi-card-border);
+  border-radius: 12px;
+  margin-left: 0;
+  background: var(--otspi-card-bg);
+  list-style: none;
+}
+
+.md-typeset .otspi-404__links li {
+  margin: 0.35em 0;
 }
 
 /* --------------------------------------------------------------------------
