@@ -26,6 +26,8 @@ description: "White paper of the Open Trusted Service Provider Initiative: marke
 <p class="wp-download-note">The PDF is tagged and validated as PDF/UA-1 by the veraPDF checker; this automated validation does not replace testing with a screen reader. This page (HTML) remains the accessible reference version.</p>
 </div>
 
+<div class="wp-meta" markdown>
+
 | | |
 |---|---|
 | **Issuer** | Open Trusted Service Provider Initiative (OTSPI), non-profit association under the French law of 1901, currently being formed |
@@ -34,6 +36,8 @@ description: "White paper of the Open Trusted Service Provider Initiative: marke
 | **Intended readers** | Public administrations, policy makers, supervisory bodies, conformity assessment bodies (CABs), hosting providers, research laboratories, the open source ecosystem |
 | **Licence** | Creative Commons Attribution 4.0 International (CC-BY-4.0) |
 | **Contact** | [contact@otspi.org](mailto:contact@otspi.org) |
+
+</div>
 
 !!! note "Nature of this document"
     This white paper sets out an intention and a target architecture. It is neither a Time-Stamping Policy, nor a Certification Practice Statement (CPS), nor a contractual service commitment. References to products or suppliers are given for information only; their final selection will be subject to competitive procedures and to the approval of the Trust Policy Committee (CPC).

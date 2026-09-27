@@ -25,6 +25,8 @@ description: "Livre blanc de l'Open Trusted Service Provider Initiative : défai
 <p class="wp-download-note">La version PDF est balisée et validée au format PDF/UA-1 par l'outil de contrôle veraPDF ; cette validation automatique ne remplace pas un test avec un lecteur d'écran. La présente page (HTML) reste la version accessible de référence.</p>
 </div>
 
+<div class="wp-meta" markdown>
+
 | | |
 |---|---|
 | **Émetteur** | Initiative « Open Trusted Service Provider Initiative » (OTSPI), association loi 1901 en cours de constitution |
@@ -33,6 +35,8 @@ description: "Livre blanc de l'Open Trusted Service Provider Initiative : défai
 | **Destinataires** | Administrations, décideurs publics, organes de contrôle, organismes d'évaluation de la conformité (CAB), hébergeurs, laboratoires de recherche, écosystème open source |
 | **Licence** | Creative Commons Attribution 4.0 International (CC-BY-4.0) |
 | **Contact** | [contact@otspi.org](mailto:contact@otspi.org) |
+
+</div>
 
 !!! note "Nature du document"
     Le présent livre blanc expose une intention et une architecture cible. Il ne constitue ni une Politique d'Horodatage, ni une Déclaration des Pratiques de Certification (DPC), ni un engagement contractuel de service. Les références à des produits ou fournisseurs sont données à titre indicatif ; leur sélection définitive relèvera de procédures de mise en concurrence et de l'approbation du Comité des Politiques de Confiance (CPC).
