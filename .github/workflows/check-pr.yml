@@ -1,4 +1,4 @@
-name: Vérification des pull requests (build et PDF)
+name: Vérification des pull requests (build, accessibilité et PDF)
 
 # Mêmes étapes de construction que le déploiement, sans déploiement ni secret :
 # le site et les PDF du portail (livre blanc, statuts, règlement intérieur, charte) sont validés
@@ -39,6 +39,20 @@ jobs:
 
       - name: Build documentation
         run: mkdocs build --strict
+
+      # Accessibilité des pages HTML (WCAG 2 AA, moteur axe) : Chrome du runner, sans téléchargement
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check accessibility (pa11y, axe)
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
+          CHROME: /usr/bin/google-chrome
+        run: |
+          npm install --no-save --no-audit --no-fund pa11y@9
+          node scripts/check_a11y.js site
 
       - name: Export PDF
         run: python scripts/export_pdf.py

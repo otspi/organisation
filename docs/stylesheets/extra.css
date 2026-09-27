@@ -26,6 +26,11 @@
   --md-accent-fg-color: #0369a1;
   --md-accent-fg-color--transparent: rgba(3, 105, 161, 0.1);
   --md-typeset-a-color: #1d4ed8;
+  /* Gris de coloration syntaxique et texte secondaire des schémas : le gris clair de Material
+     (#0000008a) reste sous 4,5:1 sur le fond des blocs de code et des boîtes teintées */
+  --md-code-hl-generic-color: #4b5563;
+  --md-code-hl-comment-color: #4b5563;
+  --otspi-muted: #4b5563;
 }
 
 [data-md-color-scheme="slate"] {
@@ -37,6 +42,7 @@
 }
 
 [data-md-color-scheme="slate"] > * {
+  --otspi-muted: #b4bcc8;
   --md-accent-fg-color: #38bdf8;
   --md-accent-fg-color--transparent: rgba(56, 189, 248, 0.12);
 }
@@ -602,7 +608,7 @@
 }
 
 .wp-svg .dg-glabel {
-  fill: var(--md-default-fg-color--light);
+  fill: var(--otspi-muted);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -634,7 +640,7 @@
 }
 
 .wp-svg .dg-s {
-  fill: var(--md-default-fg-color--light);
+  fill: var(--otspi-muted);
   font-size: 12px;
 }
 
