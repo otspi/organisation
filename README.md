@@ -75,7 +75,7 @@ La gouvernance d'OTSPI applique une séparation stricte des devoirs conformémen
 
 ## 🛠️ Outils et contribution
 
-Le portail est construit avec [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). Toute pull request vers `main` est vérifiée par `.github/workflows/check-pr.yml` (construction stricte, accessibilité, PDF) ; la fusion déclenche le déploiement (`deploy-o2switch.yml`).
+Le portail est construit avec [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). Toute pull request vers `main` est vérifiée par `.github/workflows/check-pr.yml` (construction stricte, accessibilité, PDF) ; la fusion déclenche le déploiement (`deploy-o2switch.yml`), qui repasse les mêmes contrôles. Les deux workflows partagent l'action `.github/actions/build-portal`.
 
 **Construire et prévisualiser le site**
 
