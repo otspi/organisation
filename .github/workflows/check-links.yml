@@ -22,7 +22,7 @@ jobs:
         id: check
         run: |
           set +e
-          python3 scripts/check_links.py docs --json /tmp/liens.json | tee /tmp/liens.txt
+          python3 scripts/check_links.py docs --ignore scripts/links-ignore.txt --json /tmp/liens.json | tee /tmp/liens.txt
           echo "code=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
 
       - name: Ouvrir un ticket si des liens sont cassés

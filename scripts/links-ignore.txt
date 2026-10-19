@@ -1,0 +1,8 @@
+# Préfixes d'URL ignorés par le contrôle des liens (un par ligne).
+# Pages derrière un contrôle anti-robots (Cloudflare, DataDome) : 403 même pour un navigateur
+# sans interface. Vérifiées à la main (archive web) : 200 le 19 octobre 2026.
+https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises
+https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047558499
+https://www.entrust.com/legal-compliance/hsm-solutions/certifications/common-criteria
+# Equinix refuse le User-Agent du script (403) mais répond 200 à un navigateur (vérifié le 19 octobre 2026).
+https://www.equinix.com/data-centers/europe-colocation/
