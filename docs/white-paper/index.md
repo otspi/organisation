@@ -115,7 +115,7 @@ Regulation (EU) 2024/1183, known as **eIDAS 2.0**, amending Regulation (EU) No 9
 
 These deadlines will multiply the need for qualified electronic signatures, seals, time-stamps and attestations.
 
-The European market for **Qualified Trust Service Providers (QTSPs)** includes a significant number of operators: as of 24 September 2026, the national trusted lists of the EEA list **280 QTSPs** with at least one active qualified service, **158 of which offer a qualified electronic time-stamping service**[^tl]. The bottleneck is therefore not the number of providers, but the **uniformity of their access model**:
+The European market for **Qualified Trust Service Providers (QTSPs)** includes a significant number of operators: as of 19 October 2026, the national trusted lists of the EEA list **280 QTSPs** with at least one active qualified service, **158 of which offer a qualified electronic time-stamping service**[^tl]. The bottleneck is therefore not the number of providers, but the **uniformity of their access model**:
 
 - proprietary interfaces wrapping standard protocols;
 - per-unit pricing (per token, per transaction or per signature), often combined with a subscription and set-up fees;
@@ -191,7 +191,7 @@ Free software — signing libraries, software supply chain tools, archiving syst
 
 Entering the qualified services market is costly: conformity assessment by an accredited body, purchase of certified cryptographic modules, secure hosting, financial guarantees (Article 24(2) of the Regulation), and qualified staff. These barriers to entry, legitimate given the security requirements, are passed on in unit prices and steer all operators towards the same commercial model.
 
-The distribution of providers also reflects strong national fragmentation: of the 158 time-stamping QTSPs identified, 38 are on the Spanish trusted list, 17 on the Italian list and 15 on the French list, while several States have only one or none[^tl]. The mutual recognition provided for by the Regulation has not led to the emergence of a common infrastructure at Union level.
+The distribution of providers also reflects strong national fragmentation: of the 158 time-stamping QTSPs identified, 38 are on the Spanish trusted list, 17 on the Italian list and 14 on the French list, while several States have only one or none[^tl]. The mutual recognition provided for by the Regulation has not led to the emergence of a common infrastructure at Union level.
 
 Under eIDAS 2.0, this situation presents three risks:
 
@@ -692,7 +692,7 @@ Beyond these contributions, any person or organisation that shares the principle
 
 ## Appendix C — Sources and methodology for figures
 
-The figures in this document were collected on 24 September 2026. References are given in the notes below.
+The figures in this document were collected on 19 October 2026. References are given in the notes below.
 
 !!! info "QTSP count methodology"
     The count was produced by automated analysis of the national trusted lists referenced by the European list of trusted lists (LOTL, `https://ec.europa.eu/tools/lotl/eu-lotl.xml`), i.e. 31 lists from EEA States. Any provider with at least one service with the status `granted` is counted as a QTSP. Any provider with at least one service of type `http://uri.etsi.org/TrstSvc/Svctype/TSA/QTST` with the status `granted` is counted as a time-stamping QTSP. The number of declared services is not used as an indicator, as some lists record each time-stamping unit as a separate service. The script, published under the EUPL 1.2 in [`scripts/count_qtsp.py`](https://github.com/otspi/organisation/blob/main/scripts/count_qtsp.py), runs every month; the latest survey is stored in [`data/qtsp-count.json`](https://github.com/otspi/organisation/blob/main/data/qtsp-count.json).

@@ -114,7 +114,7 @@ Le Règlement (UE) 2024/1183, dit **eIDAS 2.0**, modifiant le Règlement (UE) n�
 
 Ces échéances vont multiplier les besoins en signatures, cachets, horodatages et attestations électroniques qualifiés.
 
-Le marché européen des **Prestataires de Services de Confiance Qualifiés (QTSP)** compte un nombre significatif d'opérateurs : au 24 septembre 2026, les listes de confiance nationales de l'EEE recensent **280 QTSP** disposant d'au moins un service qualifié actif, dont **158 proposant un service d'horodatage électronique qualifié**[^tl]. Le verrou n'est donc pas le nombre d'acteurs, mais l'**homogénéité de leur modèle d'accès** :
+Le marché européen des **Prestataires de Services de Confiance Qualifiés (QTSP)** compte un nombre significatif d'opérateurs : au 19 octobre 2026, les listes de confiance nationales de l'EEE recensent **280 QTSP** disposant d'au moins un service qualifié actif, dont **158 proposant un service d'horodatage électronique qualifié**[^tl]. Le verrou n'est donc pas le nombre d'acteurs, mais l'**homogénéité de leur modèle d'accès** :
 
 - interfaces propriétaires encapsulant les protocoles normalisés ;
 - tarification à l'unité (au jeton, à la transaction ou à la signature), souvent assortie d'un abonnement et de frais de mise en service ;
@@ -190,7 +190,7 @@ Les logiciels libres — bibliothèques de signature, outils de chaîne d'approv
 
 L'entrée sur le marché des services qualifiés est coûteuse : évaluation de la conformité par un organisme accrédité, acquisition de modules cryptographiques certifiés, hébergement sécurisé, constitution de garanties financières (article 24, paragraphe 2, du règlement), maintien d'équipes habilitées. Ces barrières à l'entrée, légitimes au regard des exigences de sécurité, se répercutent sur le prix unitaire et orientent l'ensemble des opérateurs vers un modèle commercial identique.
 
-La répartition des prestataires reflète en outre un fort cloisonnement national : sur les 158 QTSP d'horodatage recensés, 38 relèvent de la liste de confiance espagnole, 17 de la liste italienne et 15 de la liste française, tandis que plusieurs États n'en comptent qu'un ou aucun[^tl]. La reconnaissance mutuelle prévue par le règlement ne s'est pas traduite par l'émergence d'une infrastructure commune à l'échelle de l'Union.
+La répartition des prestataires reflète en outre un fort cloisonnement national : sur les 158 QTSP d'horodatage recensés, 38 relèvent de la liste de confiance espagnole, 17 de la liste italienne et 14 de la liste française, tandis que plusieurs États n'en comptent qu'un ou aucun[^tl]. La reconnaissance mutuelle prévue par le règlement ne s'est pas traduite par l'émergence d'une infrastructure commune à l'échelle de l'Union.
 
 Sous eIDAS 2.0, cette situation présente trois risques :
 
@@ -690,7 +690,7 @@ Au-delà de ces contributions, toute personne ou organisation qui partage les pr
 
 ## Annexe C — Sources et méthodologie des données chiffrées
 
-Les données chiffrées du présent document ont été relevées le 24 septembre 2026. Les références figurent en notes ci-dessous.
+Les données chiffrées du présent document ont été relevées le 19 octobre 2026. Les références figurent en notes ci-dessous.
 
 !!! info "Méthodologie du décompte des QTSP"
     Le décompte a été réalisé par analyse automatisée des listes de confiance nationales référencées par la liste des listes de confiance européenne (LOTL, `https://ec.europa.eu/tools/lotl/eu-lotl.xml`), soit 31 listes des États de l'EEE. Est compté comme QTSP tout prestataire disposant d'au moins un service au statut `granted`. Est compté comme QTSP d'horodatage tout prestataire disposant d'au moins un service de type `http://uri.etsi.org/TrstSvc/Svctype/TSA/QTST` au statut `granted`. Le nombre de services déclarés n'est pas retenu comme indicateur, certaines listes enregistrant chaque unité d'horodatage comme un service distinct. Le script, publié sous EUPL 1.2 dans [`scripts/count_qtsp.py`](https://github.com/otspi/organisation/blob/main/scripts/count_qtsp.py), est exécuté chaque mois ; le dernier relevé est versé dans [`data/qtsp-count.json`](https://github.com/otspi/organisation/blob/main/data/qtsp-count.json).

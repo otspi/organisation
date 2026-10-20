@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-25",
+  "date": "2026-10-19",
   "source": "https://ec.europa.eu/tools/lotl/eu-lotl.xml",
   "listes": 31,
   "qtsp": 280,
@@ -50,8 +50,8 @@
       "qtsp_qtst": 0
     },
     "FR": {
-      "qtsp": 33,
-      "qtsp_qtst": 15
+      "qtsp": 32,
+      "qtsp_qtst": 14
     },
     "HR": {
       "qtsp": 4,
@@ -110,8 +110,8 @@
       "qtsp_qtst": 6
     },
     "RO": {
-      "qtsp": 9,
-      "qtsp_qtst": 9
+      "qtsp": 10,
+      "qtsp_qtst": 10
     },
     "SE": {
       "qtsp": 4,
