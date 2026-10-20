@@ -81,7 +81,7 @@ Le siège peut être transféré ensuite par simple décision du Président (art
 
 ### Phase E. Mises à jour à faire une fois l'association déclarée
 
-- [ ] Demander le numéro d'entreprise IANA au nom de l'association (voir [Arc d'OID](../cadrage/oid-arc.md))
+- [ ] Faire transférer au nom de l'association le numéro d'entreprise IANA 67027, attribué à l'initiative (voir [Arc d'OID](../cadrage/oid-arc.md))
 - [ ] Mettre à jour les mentions légales du site : l'association devient l'éditrice, avec son adresse et son numéro RNA
 - [ ] Remplacer « en cours de constitution » et « projet de statuts » dans le livre blanc, la vitrine, le portail et le profil GitHub
 - [ ] Transférer la titularité des noms de domaine, des comptes et des accès à l'association

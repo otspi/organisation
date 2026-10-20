@@ -3,7 +3,7 @@
 ## Plan d'obtention d'un numéro d'entreprise IANA et d'allocation de l'arc
 
 !!! note "Statut du document"
-    Document de cadrage, version 0.1, en cours d'examen par le Comité des Politiques de Confiance (CPC). La demande auprès de l'IANA a été déposée le 25 septembre 2026 au nom de l'initiative (demande n° PHTU-RTZ-60K) ; elle attend la confirmation par courriel de l'adresse de contact. Le numéro n'est pas encore attribué.
+    Document de cadrage, version 0.2, en cours d'examen par le Comité des Politiques de Confiance (CPC). La demande auprès de l'IANA a été déposée le 25 septembre 2026 au nom de l'initiative (demande n° PHTU-RTZ-60K). **Le numéro d'entreprise 67027 a été attribué** (constaté le 5 octobre 2026) ; l'arc d'OTSPI est donc `1.3.6.1.4.1.67027`. Le titulaire enregistré reste l'initiative : il doit être transféré à l'association (§2).
 
 ---
 
@@ -48,7 +48,7 @@ L'adresse de contact doit rester relevable à long terme : elle servira à la co
 
 ## 4. Allocation de l'arc
 
-Notation : `<PEN>` désigne le numéro qui sera attribué, sous l'arc `1.3.6.1.4.1.<PEN>`.
+Notation : `<PEN>` désigne le numéro d'entreprise d'OTSPI, **67027**, sous l'arc `1.3.6.1.4.1.<PEN>` (soit `1.3.6.1.4.1.67027`).
 
 | Arc | Usage |
 |---|---|
@@ -57,7 +57,9 @@ Notation : `<PEN>` désigne le numéro qui sera attribué, sous l'arc `1.3.6.1.4
 | `<PEN>.1.2` | Politiques de cachet et de signature (réservé) |
 | `<PEN>.1.3` | Politiques de certificats TLS (réservé) |
 | `<PEN>.2` | Politiques de certification (CP/CPS) |
-| `<PEN>.3` | Extensions et attributs (réservé) |
+| `<PEN>.2.9` | Politiques de certification **internes** au système (certificats du lien entre console et autorité, jamais délivrés au public) |
+| `<PEN>.3` | Extensions et attributs |
+| `<PEN>.3.1` | Extension de CRL listant les numéros de série émis (usage interne au moteur) |
 | `<PEN>.9` | **Test et staging**, qui reproduit à l'identique la structure ci-dessus (ex. `<PEN>.9.1.1.1`) |
 
 Règles de gestion :
@@ -67,6 +69,20 @@ Règles de gestion :
 3. **Registre public.** Chaque attribution est consignée dans un registre publié dans le dépôt de gouvernance, avec sa date, son objet et le document de référence.
 4. **Approbation par le CPC.** Toute nouvelle branche de l'arc est approuvée par le CPC, comme les politiques de certification et de service dont il a la charge (article 8 bis du projet de statuts).
 5. **Conformité à la politique de référence.** La Politique d'Horodatage d'OTSPI déclare sa conformité à la politique *Best Practices Time-Stamp Policy* de l'ETSI EN 319 421 (OID `0.4.0.2023.1.1`). La forme exacte de cette déclaration (OID propre référençant la BTSP, ou reprise directe de l'OID de l'ETSI) est à arrêter avec l'organisme d'évaluation de la conformité lors de la phase 2.
+
+## 4 bis. Registre des attributions
+
+Registre des identifiants effectivement alloués (règle 3). Une ligne n'est ajoutée qu'après approbation du CPC ; la colonne « Statut » le dit.
+
+| OID | Objet | Document de référence | Date | Statut |
+|---|---|---|---|---|
+| `1.3.6.1.4.1.67027` | Numéro d'entreprise IANA d'OTSPI (titulaire : l'initiative, à transférer à l'association) | Demande IANA PHTU-RTZ-60K du 25 septembre 2026 | 2026-10-05 (constat) | Attribué |
+| `1.3.6.1.4.1.67027.9.1.1.1` | Politique d'horodatage de **test** et de staging | Ce document, §5 | 2026-10-05 | Posé dans le moteur ; à approuver par le CPC |
+| `1.3.6.1.4.1.67027.2.9.1` | Politique de certification interne : certificat client de la console | Moteur, `docs/CA.md` | 2026-10-05 | **Proposé**, en attente du CPC |
+| `1.3.6.1.4.1.67027.2.9.2` | Politique de certification interne : certificat serveur de l'autorité | Moteur, `docs/CA.md` | 2026-10-05 | **Proposé**, en attente du CPC |
+| `1.3.6.1.4.1.67027.3.1` | Extension de CRL : numéros de série émis | Moteur, constat O-1 de l'audit du 25 septembre 2026 | 2026-10-05 | **Proposé**, en attente du CPC |
+
+Les trois OID internes ont remplacé des valeurs provisoires placées sous le numéro `0` (`1.3.6.1.4.1.0.1.1` à `.3`), qui n'appartenaient à personne. Elles n'ont jamais figuré dans un certificat ou une CRL délivrés à un tiers.
 
 ## 5. Plan de remplacement dans le code
 
@@ -78,6 +94,8 @@ Le remplacement est essentiellement une affaire de **configuration** : l'OID de 
 | Tests d'intégration et de bout en bout | `crates/oe-crosstsa/tests/`, `crates/oe-httpapi/tests/`, `crates/oe-tsa-core/tests/`, `crates/oe-tsa-core/src/lib.rs` |
 | Déploiement | `deploy/helm/open-eidas/values.yaml`, `docker-compose.yml` |
 | Documentation | `docs/API.md`, `docs/ARCHITECTURE.md`, `docs/CPS.md` |
+
+État au 5 octobre 2026 : le remplacement des 18 occurrences de la valeur de test par `<PEN>.9.1.1.1`, et des trois OID provisoires internes, est préparé dans une modification du dépôt du moteur (script `scripts/set-oid-arc.sh`), en attente de revue et de fusion. Le staging doit aussi recevoir la nouvelle valeur de `OPENEIDAS_POLICY_OID`, et les certificats internes déjà émis doivent être réémis (ils portent l'ancien OID provisoire).
 
 Séquence :
 
@@ -91,8 +109,10 @@ Les jetons déjà émis par le staging sous l'ancien OID n'ont aucune valeur jur
 ## 6. Prochaines étapes
 
 - [ ] Décision du CPC sur le titulaire de l'attribution (association ou initiative)
-- [x] Dépôt de la demande auprès de l'IANA (25 septembre 2026, à confirmer par courriel sous trente jours)
+- [x] Dépôt de la demande auprès de l'IANA (25 septembre 2026)
+- [x] Attribution du numéro d'entreprise **67027** (constatée le 5 octobre 2026)
 - [ ] Mise à jour du titulaire au nom de l'association après sa déclaration
-- [ ] Publication du registre d'OID
-- [ ] Remplacement de l'OID de test dans le moteur et le staging
+- [ ] Approbation par le CPC de l'allocation des OID internes (`2.9.x`, `3.1`) et de l'OID de test
+- [x] Registre d'OID : première version au §4 bis (à publier après approbation du CPC)
+- [ ] Remplacement de l'OID de test dans le moteur (préparé) et le staging
 - [ ] Garde-fou de mise en production
